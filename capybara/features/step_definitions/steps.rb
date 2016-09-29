@@ -8,5 +8,5 @@ When(/^I search for "(.*?)"$/) do |search_term|
 end
 
 Then(/^videos of large rodents are returned$/) do
-   expect(page).to have_content 'Capybara'
+   expect(page).to have_content 'largest rodent'
 end

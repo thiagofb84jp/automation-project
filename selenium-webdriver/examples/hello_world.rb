@@ -1,13 +1,10 @@
 require 'rubygems'
 require 'selenium-webdriver'
 
-Selenium::WebDriver::Firefox::Binary.path = "/path/to/firefox"
+driver = Selenium::WebDriver.for(:chrome)
+driver.manage().window().maximize
+driver.navigate.to("https://dev.control.eng.br/acessos")
 
-driver = Selenium::WebDriver.for :firefox, marionette: true
-driver.navigate.to "http://www.google.com"
+sleep 1
 
-element = driver.find_element(:name, 'q')
-element.send_keys "Hello Selenium Webdriver!"
-element.submit
-
-puts driver.title
+driver.quit
