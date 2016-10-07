@@ -25,6 +25,7 @@ d) gem update --system (atualiza todas as gems do sistema)
 a) gem install bundler (instala a versão mais autalizada do Bundler)
 b) bundle install (instala gems específicas para o projeto selecionado)
 c) bundle exec cucumber (gera as etapas/snippets adaptadas para Ruby criadas previamente no arquivo de feature)
+d) bundle show/list (Exibe todas as gems atribuídas para um projeto específico)
 
 3. Instalar Nokogiri:
 
@@ -42,6 +43,7 @@ a) gem install capybara
 6. Instalar Cucumber:
 
 a) gem install cucumber
+b) cucumber --init (Cria toda a estrutura das pastas e arquivos para iniciar um projeto)
 
 7. Instalar Selenium Webdriver:
 

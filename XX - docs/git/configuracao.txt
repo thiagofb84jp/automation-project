@@ -1,0 +1,12 @@
+| GIT |
+
+
+
+Lista dos principais comandos
+
+a) git clone <endereco_do_projeto>
+b) git add <lista_de_arquivos>
+c) git status
+d) git commit -m "<escrever_texto>"
+e) git pull
+f) git push
