@@ -17,10 +17,9 @@ TDD, but moves one step forward—BDD combines TDD with ideas from domain-driven
 and business people with shared tools and a shared process to collaborate on software
 development.
 
-- BDD focuses on implementing the minimum marketable feature (MMF) that will yield the
-most value. The business team and the development team can cooperate on a common
-language; this significantly reduces misunderstanding and eliminates waste, unnecessary
-code, and functionality.
+- BDD focuses on implementing the minimum marketable (vendável) feature (MMF) that will yield (produção) the most value.
+
+The business team and the development team can cooperate on a common language; this significantly reduces misunderstanding and eliminates waste, unnecessary code, and functionality.
 
 3. Quais as etapas para escrita de um BDD?
 
@@ -35,13 +34,14 @@ The typical process can be described in the following steps:
 
 4. O que é Cucumber?
 
-- Cucumber is a tool for BDD-style development widely used in the Ruby on Rails platform.
+- Cucumber is a tool for BDD-style development widely (sign.: largamente) used in the Ruby on Rails platform.
+
 It introduced a domain-specific language (DSL) named Gherkin to allow the execution of
 feature documentation written in business-facing text, and implement acceptance test code
 in other languages (for example Ruby).
 
-- Cucumber sets up a great bridge between business people and development teams.
-Its natural and human readable language ultimately eliminates misunderstanding, and
+- Cucumber sets up (configura) a great bridge between business people and development teams.
+Its natural and human readable language ultimately eliminates misunderstanding (sign.: mal entendido), and
 the regular expression "translation" layer provides the ability for developers to do anything
 magical and powerful
 
@@ -49,7 +49,7 @@ magical and powerful
 5. O que é uma feature?
 
 - Feature files (their extension is .feature ): Each feature is captured as a "story",
-which defines the scope of the feature along with its acceptance criteria.
+which defines the scope of the feature along with (junto com) its acceptance criteria.
 
 - A feature contains a feature title and a description of one or more scenarios. One scenario contains describing steps.
 
