@@ -40,7 +40,8 @@ a) gem install rails (instala a versão mais autalizada do Rails)
 b) rails new <nome_do_projeto>
 c) rails generate cucumber:install (cria a estrutura das pastas para execução do projeto em Cucumber)
 OBSERVAÇÃO: Caso ocorra falhas durante a execução deste comando, é preciso instalar o nodejs (sudo apt-get install nodejs)
-Link para maiores informações: http://stackoverflow.com/questions/34455367/error-when-executing-rails-s/34455932 ou https://nodejs.org/en/
+Link para maiores informações: http://stackoverflow.com/questions/34455367/error-when-executing-rails-s/34455932
+d) https://nodejs.org/en/
 
 6. Instalar Cucumber:
 
