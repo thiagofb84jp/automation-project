@@ -1,0 +1,61 @@
+1. O que é TDD?
+
+Test-Driven Development is a developer practice that involves writing tests
+before writing the code being tested. Begin by writing a very small test for
+code that does not yet exist. Run the test, and, naturally, it fails. Now write
+just enough code to make that test pass.
+
+Once the test passes, observe the resulting design, and refactor any duplica-
+tion you see. 2 It is natural at this point to judge the design as too simple to
+handle all the responsibilities this code will have.
+
+Instead of adding more code, document the next responsibility in the form of
+the next test. Run it, watch it fail, write just enough code to get it to pass,
+review the design, and remove duplication. Now add the next test, watch it fail, get it to pass, refactor, fail, pass, refactor, fail, pass, refactor, and so on,
+and so on.
+
+Rather than thinking of TDD as a testing practice, we see it as a technique
+used to deliver high-quality code to testers, who are responsible for formal
+testing practices
+
+2. O que é BDD?
+
+BDD puts the focus on behavior instead of structure, and it does so at every
+level of development.
+
+Once we acknowledge this, (BDD make) it changes the way we think about driving out
+code. We begin to think more about interactions between people and systems,
+or between objects, than we do about the structure of the objects.
+
+BDD aims (alvo/objetivo) to help communication by simplifying
+the language we use to describe scenarios in which the software will be used:
+Given some context, When some event occurs, Then I expect some outcome.
+
+3. O que é Given, When e Then?
+
+Given, When, Then, the BDD triad, are simple words that we use whether
+we’re talking about application behavior or object behavior. They are easily
+understood by business analysts, testers, and developers alike.
+
+4. O que é Rspec?
+
+
+5. O que é Cucumber?
+
+
+
+:: INFORMAÇÕES COMPLEMENTARES ::
+
+-> RSpec and Cucumber help us specify
+the behavior of code with examples that are programmatically tied to that
+code.
+
+-> We use Cucumber to describe the behavior of applications and use RSpec to
+describe the behavior of objects.
+
+-> Both cycles involve taking small steps and listening to the feedback you get
+from the tools. We start with a failing step (red) in Cucumber (the outer cycle).
+To get that step to pass, we’ll drop down to RSpec (the inner cycle) and drive
+out the underlying code at a granular level (red/green/refactor).
+
+-> 
