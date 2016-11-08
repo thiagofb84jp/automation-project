@@ -25,6 +25,6 @@ Feature: Acess the system Intranet
            
         Scenario: Login without to fill user and password
            Given user acess initial page
-           When not to insert "login" 
+           When not to insert "login"
            And not to insert "password"
            Then the page show warning page

@@ -46,3 +46,4 @@ Link para maiores informações: http://stackoverflow.com/questions/34455367/error
 
 a) gem install cucumber
 b) cucumber --init (Cria toda a estrutura das pastas e arquivos para iniciar um projeto)
+c) cucumber <nome_da_feature>.feature (Inicializa os dados da feature)
