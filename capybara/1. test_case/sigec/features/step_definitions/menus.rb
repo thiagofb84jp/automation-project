@@ -232,7 +232,7 @@ When(/^I go on Grupo de Faturamento Opcional page$/) do
 end
 
 Then(/^I should see all registers about Grupo de Faturamento Opcional$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content ''
 end
 
 When(/^I go on Relatório page$/) do
@@ -242,7 +242,7 @@ When(/^I go on Relatório page$/) do
 end
 
 Then(/^I should see all registers about Relatório$/) do
-'Relatório SIGEC'
+  expect(page).to have_content 'Relatório SIGEC'
 end
 
 When(/^I go on Ordem Serviço Despacho page$/) do
@@ -252,7 +252,7 @@ When(/^I go on Ordem Serviço Despacho page$/) do
 end
 
 Then(/^I should see all registers about Ordem Serviço Despacho$/) do
-'Ordens de Serviços para Despacho'
+  expect(page).to have_content 'Ordens de Serviços para Despacho'
 end
 
 When(/^I go on Programar OS page$/) do
@@ -262,7 +262,7 @@ When(/^I go on Programar OS page$/) do
 end
 
 Then(/^I should see all registers about Programar OS$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content 'Ordens de Serviço Pesquisadas'
 end
 
 When(/^I go on Priorizar OS page$/) do
