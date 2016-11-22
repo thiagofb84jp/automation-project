@@ -178,7 +178,7 @@ When(/^I go on Serviços Faturamento page$/) do
 end
 
 Then(/^I should see all registers about Serviços Faturamento$/) do
-  expect(page).to have_content 'Todos Tipos Ordens de Serviços'
+  expect(page).to have_content 'Todos Serviços Faturamentos'
 end
 
 When(/^I go on Motivos de Desvio page$/) do
