@@ -14,11 +14,11 @@ Feature: Acess the system Intranet with SIGEC module
       | Ordem de Serviço             | Ordem de Serviço             |
       | Desvios de Equipe            | Desvios de Equipe            |
       | Glosa e Crédito              | Glosa e Crédito              |
-      | Contratos                    | Contratos		    |
-      | Regional                     | Regional		    	    |
-      | Polo                         | Polo  		    	    |
-      | Cidade                       | Cidade  		            |
-      | Horário                      | Horário  		    |
+      | Contratos                    | Contratos		              |
+      | Regional                     | Regional		    	           |       
+      | Polo                         | Polo  		    	           |
+      | Cidade                       | Cidade  		                 |
+      | Horário                      | Horário  		              |
       | Sobreaviso/Emerg./H          | Sobreaviso/Emerg./HH         |
       | Tipo de Serviço de Equipe    | Tipo de Serviço de Equipe    |
       | Tipo de Equipe               | Tipo de Equipe               |
@@ -29,12 +29,9 @@ Feature: Acess the system Intranet with SIGEC module
       | Serviços Faturamento         | Serviços Faturamento         |
       | Motivos de Desvio            | Motivos de Desvio            |
       | Grupos de Mercadoria         | Grupos de Mercadoria         |
-      | Grupos de APR                | Grupos de APR                |
-      | Atividades de APR            | Atividades de APR            |
-      | Medidas de APR               | Medidas de APR               |
       | Grupos de EPI/EPC            | Grupos de EPI/EPC            |
       | Grupo de Faturamento Opcional| Grupo de Faturamento Opcional|
-      | Relatório                    | Relatório  		    |
+      | Relatório                    | Relatório  		              |
       | Ordem Serviço Despacho       | Ordem Serviço Despacho       |
       | Programar OS                 | Programar OS                 |
       | Priorizar OS                 | Priorizar OS                 |
