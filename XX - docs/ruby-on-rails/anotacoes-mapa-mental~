@@ -1,0 +1,94 @@
+CURSO UDEMY (ANOTAÇÕES/MAPA MENTAL):
+
+
+O QUE É RUBY?
+1. Linguagem de programação interpretada multiparadigma, dinâmica, open source com foco na simplicidade e na produtividade. Tem uma sintaxe elegante de leitura natural e fácil escrita;
+2. Como linguagem de programação, lembra muito as outras (C, C#, Java, Python, entre outros);
+3. Site do Ruby: https://www.ruby-lang.org/pt/
+
+
+O QUE É UM FRAMEWORK?
+
+1. É uma abstração que une códigos comuns entre vários projetos de software provendo uma funcionalidade genérica. Um framework pode atingir uma funcionalidade específica, por configuração, durante a programação de uma aplicação;
+2. O Ruby on Rails uniu diversos projetos transformando-os em um único, onde cada um desses projetos é uma Gem;
+
+>> RAILS << 
+O QUE É RAILS (ou RUBY ON RAILS)?
+
+1. Framework de desenvolvimento de aplicações web escrito em linguagem Ruby, projetado para tornar a programação web fácil ao tempo que faz situações sobre o que o programador precisa para começar;
+2. Trata-se de um conjunto de frameworks (projetos em separado) que, quando unidos, formam o Ruby on Rails;
+3. Isso permite escrever menos código enquanto faz mais do que em outras linguagens e frameworks. Desenvolvedores mais experientes também reportam que isso torna o desenvolvimento web mais interativo;
+4. Rails é um software opinativo. Ou seja, ele faz suposições da melhor forma de como fazer coisas, e é projetado para encorajar a seguir esse caminho e em alguns casos desencoraja alternativas (torna padrão diversas alternativas);
+5. Depois de compreendida a forma como Rails funciona, a produtividade aumenta de forma considerável;
+6. A filosofia Rails segue dois grandes princípios: 
+   a) Não se repita (Don't Repeat Yourself): Princípio de desenvolvimento de software que afirma que "cada pedaço do conhecimento deve ter uma representação única, não ambígua e autoritária dentro de um sistema. Trata-se de não copiar/colar código do sistema várias vezes de forma repetida; Ponto complementar: Por não escrever a mesma informação repetidas vezes, seu código é mais sustentável, mais extensível, e possuirá menos bugs;
+   b) Convenção sobre Configuração (Convention Over Configuration): Rails tem opiniões sobre a melhor maneira de padronizar e fazer muitas coisas em uma aplicação web, em vez de exigir que você especifique cada minúcia através de infinitos arquivos de configuração. Há uma configuração própria do Rails para os arquivos do projeto;
+7. Site do (Ruby on) Rails: http://rubyonrails.org/
+8. Para acessar a aplicação Rails no ar: rails s -b 0.0.0.0
+
+COMO CRIAR UM NOVO PROJETO EM RAILS?
+
+1. É preciso executar os seguintes passos:
+   a) É preciso antes ter instalado o Ruby, Rails e o RubyGems;
+   b) Executar o comando: rails new <nome_do_app>;
+   c) Para criar um projeto Rails em uma pasta específica: rails new /minhapasta/<nome_do_projeto>;
+   d) Criar um projeto Rails com uma versão específica: rails _<versao>_ new <nome_do_projeto>;
+   e) Criar um projeto Rails com uma configuração de BD específica: rails new <nome_do_projeto> --database=mysql;
+   f) Criar um projeto Rails ignorando a verificação/instalação do Bundle: rails new <nome_do_projeto> -B;
+   g) Como executar/subir o sistema: rails server (É preciso executar este comando dentro da pasta do projeto);
+   h) Como renomear um projeto em Rails: É preciso renomear dois arquivos: (1) config/application.rb / (2) config/initializers/session_store.rb
+  
+
+O QUE SÃO AS GEMS?
+
+1. São bibliotecas ou conjuntos de arquivos Ruby reutilizáveis, etiquetados com um nome e uma versão;
+2. São bibliotecas reutilizáveis, ou seja, são pacotes utilizados em um projeto que podem ser utilizados em outros projetos;
+3. Existem Gems para utilização dos mais variados serviços (acesso a Facebook, validação de CPF, entre outros);
+4. Site para pesquisar Gems: https://rubygems.org/
+
+
+POR QUE USAR RUBY ON RAILS?
+
+1. O processo de programar é muito mais rápido do que em outros frameworks e linguagens (o resultado é mais imediato);
+2. As convenções Rails também tornam fácil para os desenvolvedores se moverem entre diferentes projetos, onde cada um segue as mesmas estruturas e práticas de codificação;
+3. Rails é bom para Rapid Application Development (RAD), como framework é fácil incluir mudanças. Consegue-se produzir conteúdos de forma mais rápida e visualizar os resultados de forma imediata;
+4. Código Ruby é muito legível e auto-documentado. Isso melhora a produtividade, pois, escreve-se menos documentação separada do projeto e torna fácil outros desenvolvedores pegarem projetos existentes;
+5. Rails tem sido desenvolvido com um grande foco em testes e possui bons frameworks de testes;
+6. Rails e a grande maioria das bibliotecas são open source, diferentemente de outros frameworks comerciais, não existem custos de licença envolvidos;
+7. Usa o padrão de arquitetura MVC (Model View Controller);
+
+
+UM POUCO MAIS SOBRE AS GEMS
+
+1. Para se informar melhor sobre as Gems: https://rubygems.org/
+2. Para listar as gems instaladas no computador: gem list
+3. Para visualizar a versão mais recente das gems: gem -v
+4. Para listar gems de um pacote específico: gem list <nome_da_gem>
+5. Pesquisar todas as gems com o nome especificado de forma remota: gem list <nome_da_gem> --remote
+6. Pesquisar de forma remota mostrando todas as versões: gem list <nome_da_gem> --remote --all
+7. Para instalar uma gem: gem install <nome_da_gem>
+8. Para instalar uma gem com uma versão específica: gem install <nome_da_gem> -v x.x.x
+9. Para remover uma gem: gem uninstall <nome_da_gem>
+10. Para remover uma gem com uma versão específica: gem uninstall <nome_da_gem> --version x.x.x
+11. Para remover as versões mais antigas das gems: gem cleanup
+12. Para remover a versão mais antiga de uma gem específica: gem cleanup <nome_da_gem>
+13. Verifica quais gems podem ser apagadas por serem antigas: gem cleanup -d
+
+>> BUNDLER <<
+
+O QUE SÃO DEPENDÊNCIAS?
+
+1. Trata-se da dependência entre gems para funcionar um pacote específico;
+2. O Bundler faz a dependência entre pacotes/gem funcionar (gerencia os pacotes necessários para instalação). É uma gem capaz de gerenciar as dependências das gems a serem instaladas;
+3. Gemfile é o arquivo em que se coloca todas as dependências do projeto;
+4. Para adicionar o bundler ao projeto:
+   a) Deve-se, primeiramente, criar o arquivo Gemfile;
+   b) Em seguida, adicionar um repositório (por exemplo: https://rubygems.org/);
+   c) Agora, deve-se informar as gems que se deseja instalar (por exemplo, gem 'capybara'; gem 'cucumber', etc);
+   d) Concluido os passos anteriores, executar o bundle install;
+5. O Gemfile.Lock é o arquivo que grava quais são as dependências exibidas para o projeto;
+6. Pode-se realizar o versionamento, adicionando, ao final a versão da gem na qual se deseja utilizar: Por exemplo, gem 'nome_da_gem', '1.0.1'
+   a) Para utilizar a versão exata: gem 'nome_da_gem', '1.0.1'
+   b) Para utilizar a versão igual ou maior que: gem 'nome_da_gem', '>=1.0.1'
+   c) Para utilizar a versão parcial atual da gem: gem 'nome_da_gem', '~> 1.6'
+7. Para se informar melhor sobre o bundler: http://bundler.io/

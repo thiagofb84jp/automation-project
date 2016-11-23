@@ -16,4 +16,3 @@ Feature: Acess the system Intranet with Manutencao Module
       |     marca       |       marca		   |         DELL         |
       |     modelo      |       modelo		   |     INSPIRON 1400    |
       |     tipo        |       tipo		   |        LAPTOP        |
-      
