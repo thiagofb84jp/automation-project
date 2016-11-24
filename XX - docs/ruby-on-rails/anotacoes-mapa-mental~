@@ -12,6 +12,7 @@ O QUE É UM FRAMEWORK?
 1. É uma abstração que une códigos comuns entre vários projetos de software provendo uma funcionalidade genérica. Um framework pode atingir uma funcionalidade específica, por configuração, durante a programação de uma aplicação;
 2. O Ruby on Rails uniu diversos projetos transformando-os em um único, onde cada um desses projetos é uma Gem;
 
+
 >> RAILS << 
 O QUE É RAILS (ou RUBY ON RAILS)?
 
@@ -26,6 +27,7 @@ O QUE É RAILS (ou RUBY ON RAILS)?
 7. Site do (Ruby on) Rails: http://rubyonrails.org/
 8. Para acessar a aplicação Rails no ar: rails s -b 0.0.0.0
 
+
 COMO CRIAR UM NOVO PROJETO EM RAILS?
 
 1. É preciso executar os seguintes passos:
@@ -36,7 +38,7 @@ COMO CRIAR UM NOVO PROJETO EM RAILS?
    e) Criar um projeto Rails com uma configuração de BD específica: rails new <nome_do_projeto> --database=mysql;
    f) Criar um projeto Rails ignorando a verificação/instalação do Bundle: rails new <nome_do_projeto> -B;
    g) Como executar/subir o sistema: rails server (É preciso executar este comando dentro da pasta do projeto);
-   h) Como renomear um projeto em Rails: É preciso renomear dois arquivos: (1) config/application.rb / (2) config/initializers/session_store.rb
+   h) Como renomear um projeto em Rails: É preciso renomear dois arquivos: (1) config/application.rb / (2) config/initializers/session_store.rb;
   
 
 O QUE SÃO AS GEMS?
@@ -74,6 +76,7 @@ UM POUCO MAIS SOBRE AS GEMS
 12. Para remover a versão mais antiga de uma gem específica: gem cleanup <nome_da_gem>
 13. Verifica quais gems podem ser apagadas por serem antigas: gem cleanup -d
 
+
 >> BUNDLER <<
 
 O QUE SÃO DEPENDÊNCIAS?
@@ -92,3 +95,9 @@ O QUE SÃO DEPENDÊNCIAS?
    b) Para utilizar a versão igual ou maior que: gem 'nome_da_gem', '>=1.0.1'
    c) Para utilizar a versão parcial atual da gem: gem 'nome_da_gem', '~> 1.6'
 7. Para se informar melhor sobre o bundler: http://bundler.io/
+
+
+>> CONHECIMENTOS COMPLEMENTARES <<
+
+1. Existe uma gem chamada rename que possibilita renomear o projeto Rails apenas com simples comandos. 
+2. Link para acesso: https://github.com/morshedalam/rename
