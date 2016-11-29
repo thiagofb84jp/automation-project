@@ -1,3 +1,4 @@
+=begin
 Given(/^I am on the Intranet page$/) do
   visit 'https://dev.control.eng.br/acessos'
 end
@@ -28,3 +29,4 @@ Then(/^I should see all registers about team productivity$/) do
   expect(page).to have_content 'MANUTENÇÃO PESADA'
   sleep 10
 end
+=end
