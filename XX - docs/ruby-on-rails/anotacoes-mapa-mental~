@@ -40,6 +40,19 @@ COMO CRIAR UM NOVO PROJETO EM RAILS?
    g) Como executar/subir o sistema: rails server (É preciso executar este comando dentro da pasta do projeto);
    h) Como renomear um projeto em Rails: É preciso renomear dois arquivos: (1) config/application.rb / (2) config/initializers/session_store.rb;
   
+2. COMO É A ESTRUTURA DE PASTAS?
+   a) app: Pasta utilizada em grande tempo do projeto, contém as pastas do controller, do model, da view, das asserts. 90% do sistema ficará nestas pastas;
+   b) bin: Roda scripts na inicialização do projeto;
+   c) config: Pasta utilizada para as configurações do projeto (banco de dados, win18n, entre outros);
+   d) db: Pasta utilizada para a configuração do banco de dados;
+   e) lib: Ficam as bibliotecas criadas durante o projeto;
+   f) log: Ficam os logs do sistema, sendo registrado tudo o que está sendo feito;
+   g) public: Fica disponível para acesso externo. Trata-se da única pasta que permanecerá visível para o usuário final;
+   h) test: Ficam os testes da aplicação;
+   i) tmp: Ficam os arquivos temporários;
+   j) vendor: Ficam as gems/bibliotecas de terceiros;   
+
+
 
 O QUE SÃO AS GEMS?
 
@@ -47,6 +60,13 @@ O QUE SÃO AS GEMS?
 2. São bibliotecas reutilizáveis, ou seja, são pacotes utilizados em um projeto que podem ser utilizados em outros projetos;
 3. Existem Gems para utilização dos mais variados serviços (acesso a Facebook, validação de CPF, entre outros);
 4. Site para pesquisar Gems: https://rubygems.org/
+5. Como executar um arquivo Ruby? ruby <meu_arquivo>.rb
+6. Interactive Ruby Shell serve para que o programador interaja com o código produzido em tempo real. Para chamá-lo, basta ir no terminal e digitar irb;
+7. Para sair do IRB, basta digitar: CTRL + D ou o comando quit;
+8. O que é um pryrepal? Trata-se de um repl, onde: Read / Eval / Print / Loop, ou seja, Leia, Interprete, Imprima e Volte o que estava sendo escrito na tela. Ele ajuda a identificar melhor o que está sendo inserido na tela;
+9. Para instalar o pry: gem install pry
+10. Site oficial da ferramenta: http://pryrepl.org/
+
 
 
 POR QUE USAR RUBY ON RAILS?
@@ -99,5 +119,5 @@ O QUE SÃO DEPENDÊNCIAS?
 
 >> CONHECIMENTOS COMPLEMENTARES <<
 
-1. Existe uma gem chamada rename que possibilita renomear o projeto Rails apenas com simples comandos. 
-2. Link para acesso: https://github.com/morshedalam/rename
+1. Existe uma gem chamada rename que possibilita renomear o projeto Rails apenas com simples comandos. Link para acesso: https://github.com/morshedalam/rename
+2. Existe uma gem chamada cpf_utils que permite 
