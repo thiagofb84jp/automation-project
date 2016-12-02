@@ -5,6 +5,9 @@ O QUE É RUBY?
 1. Linguagem de programação interpretada multiparadigma, dinâmica, open source com foco na simplicidade e na produtividade. Tem uma sintaxe elegante de leitura natural e fácil escrita;
 2. Como linguagem de programação, lembra muito as outras (C, C#, Java, Python, entre outros);
 3. Site do Ruby: https://www.ruby-lang.org/pt/
+4. <nome_do_objeto>.class - Exibe o nome da classe
+5. <nome_do_objeto>.object_id - Exibe a referência do objeto em questão
+6. <nome_do_objeto>.tab (ao executar o TAB (do teclado) duas vezes, o sistema exibe as possibilitades dos comandos que podem ser listados);
 
 
 O QUE É UM FRAMEWORK?
@@ -121,3 +124,5 @@ O QUE SÃO DEPENDÊNCIAS?
 
 1. Existe uma gem chamada rename que possibilita renomear o projeto Rails apenas com simples comandos. Link para acesso: https://github.com/morshedalam/rename
 2. Existe uma gem chamada cpf_utils que permite 
+3. O que é a entrada padrão STIN? É a entrada padrão do teclado, responsável por permitir que o o que foi digitado na tela seja lido;
+4. Método gets: Permite 
