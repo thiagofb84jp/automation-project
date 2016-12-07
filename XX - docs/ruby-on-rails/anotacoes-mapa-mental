@@ -126,3 +126,8 @@ O QUE SÃO DEPENDÊNCIAS?
 2. Existe uma gem chamada cpf_utils que permite 
 3. O que é a entrada padrão STIN? É a entrada padrão do teclado, responsável por permitir que o o que foi digitado na tela seja lido;
 4. Método gets: Permite capturar o nome que for dado entrada no teclado;
+5. \n e chomp: O primeiro pula linhas (\n = new line). O segundo serve para remover o \n apresentado ao final do comando;
+6. Método inspect: Verifica o que está dentro da variável;
+7. Coerção/Casting: Método que permite transformar um tipo em outro. Por exemplo: gets.to_i (permite transformar de string para inteiro) e gets.to_f (permite transformar de inteiro para float)
+8. Estruturas condicionais: if, else e case;
+9. Estruturas condicionais - Condicional Ternário - <condicao> ? <verdadeiro> : <falso>
