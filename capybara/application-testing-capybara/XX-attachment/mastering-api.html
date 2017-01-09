@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mastering The API</title>
+</head>
+<body>
+	<div id="main">
+		<h2>Click on Link</h2>
+		<div class="anchor">
+			<a id="myanchor" title="myanchortitle" href="#">Click this Anchor</a>
+		</div>
+		
+		<h2>Click on Button</h2>
+		<div class="button">
+			<button id="mybutton" title="mybuttontitle">Click this Button</button>
+		</div>
+
+		<h2>Forms (With TAG Name)</h2>
+		<form id="myform_using_name">
+			Forename: <input type="text" name="Forename_1" value="" />
+			Surname: <input type="text" name="Surname_1" value="" />
+			<input type="submit" value="Go" />
+		</form>
+
+		<h2>Forms (With Label)</h2>
+		<form id="myform_using_label">
+			<label for="name1">User Forename</label>
+			<input id="name1" type="text" name="Forename_2" value="" />
+			<label for="name2">User Surname</label>
+			<input id="name2" type="text" name="Surname_2" value="" />
+			<input type="submit" value="Send" />
+		</form>
+
+		<h2>Forms (With Checkbox and Radiobutton)</h2>
+		<form id="myform_using_checkbox_radiobutton">
+			<label for="user_forname">User Forename</label>
+			<input id="forname" type="text" name="Forename_3" value="" />
+			<label for="name2">User Surname</label>
+			<input id="surname" type="text" name="Surname_3" value="" />
+			
+			<p>
+				<label for="title">Title</label>
+				<select name="user_title" id="title">
+					<option>Mrs</option>
+					<option>Mr</option>
+					<option>Miss</option>
+				</select>
+			</p>
+
+			<p>
+				<label for="under_16">Under 16</label>
+				<input type="radio" name="age" value="under" id="under_16" />
+				<label for="over_16">Over 16</label>
+				<input type="radio" name="age" value="over" id="over_16"/>
+			</p>
+
+			<p>
+				<label for="consent">Consent Given?</label>
+				<input type="checkbox" value="yes" name="consent_checkbox" id="consent"/>
+			</p>
+			
+			<input type="submit" value="Submit" />
+		</form>
+	</div>
+</body>
+</html>
