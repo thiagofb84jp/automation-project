@@ -21,3 +21,13 @@ Feature: Mastering API Components
 		Given I am on the Mastering API page
 		When I complete and submit the form using label
 		Then I should have clicked all fills the form with labels using Capybara resources
+
+	Scenario: Search for Forms (With Checkboxes and Radiobutton)
+		Given I am on the Mastering API page
+		When I complete and submit the form using checkboxes and radiobuttons
+		Then I should have clicked all fills the form with checkboxes and radiobuttons using Capybara resources
+
+	Scenario: Attach a File in a Form
+		Given I am on the Mastering API page
+		When I attach a file in a form
+		Then I should to send a file using Capybara resources

@@ -2,6 +2,14 @@
 <html>
 <head>
 	<title>Mastering The API</title>
+	<script>
+		window.onload = function(){
+			var mydiv = document.getElementById("mydiv");
+			mydiv.onclick = function(){
+				alert('div has been clicked');
+			};
+		};
+	</script>
 </head>
 <body>
 	<div id="main">
@@ -61,6 +69,17 @@
 			
 			<input type="submit" value="Submit" />
 		</form>
+
+		<h2>Attach a File in a Form</h2>
+		<form>
+			<label for="form_image">Image</label>
+			<input type="file" id="form_image" name="image">
+		</form>
+	</div>
+	
+	<h2>Finders, Scoping and Multiple Matches</h2>
+	<div class="section">
+		<div id="mydiv" title="mydivtitle">Click This Div</div>
 	</div>
 </body>
 </html>

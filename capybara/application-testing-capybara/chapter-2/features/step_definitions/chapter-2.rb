@@ -45,12 +45,35 @@ end
 
 #Fill in and submit the form using labels
 When(/^I complete and submit the form using label$/) do
-  fill_in 'User Forename', :with => 'John'
-  fill_in 'User Surname', :with => 'Williams'
+  fill_in 'Forename_2', :with => 'John'
+  fill_in 'Surname_2', :with => 'Williams'
   sleep 5
   click_on 'Send'
 end
 
 Then(/^I should have clicked all fills the form with labels using Capybara resources$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^I complete and submit the form using checkboxes and radiobuttons$/) do
+  fill_in 'Forename_3', :with => 'Charles'
+  fill_in 'Surname_3', :with => 'Perry'
+  select 'Miss', :from => 'title'
+  choose 'Over 16'
+  check 'consent'
+  sleep 5
+  click_on 'Submit'
+end
+
+Then(/^I should have clicked all fills the form with checkboxes and radiobuttons using Capybara resources$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^I attach a file in a form$/) do
+  attach_file 'Image', '/home/thiago/images/'
+  sleep 5
+end
+
+Then(/^I should to send a file using Capybara resources$/) do
   pending # Write code here that turns the phrase above into concrete actions
 end
