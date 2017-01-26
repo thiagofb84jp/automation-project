@@ -3,11 +3,11 @@
 one:
   name: MyString
   title: MyString
-  description: MyString
-  content: 2017-01-25 10:22:21
+  content: MyText
+  time: 2017-01-26 14:25:11
 
 two:
   name: MyString
   title: MyString
-  description: MyString
-  content: 2017-01-25 10:22:21
+  content: MyText
+  time: 2017-01-26 14:25:11
