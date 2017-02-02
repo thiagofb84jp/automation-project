@@ -31,3 +31,13 @@ Feature: Mastering API Components
 		Given I am on the Mastering API page
 		When I attach a file in a form
 		Then I should to send a file using Capybara resources
+
+	Scenario: Click Handler Attached
+		Given I am on the Mastering API page
+		When I click on a div with a click handler attached
+		Then I should see a message informing that div has clicked
+
+	Scenario: Search For Relevant Results
+		Given I am on the Mastering API page
+		When I search for the relevant result
+		Then I should see all results has searched

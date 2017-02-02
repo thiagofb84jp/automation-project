@@ -1,8 +1,3 @@
-#Open browser and acess this URL
-Given(/^I am on the Mastering API page$/) do
-  visit 'file:///media/thiago/9414FF9714FF7B16/projetos-automacao/capybara/application-testing-capybara/XX-attachment/mastering-api.html#'
-end
-
 #Click on link using ID
 When(/^I click on a link using and ID$/) do
   click_on 'myanchor'
@@ -35,7 +30,7 @@ end
 When(/^I complete and submit the form$/) do
   fill_in 'Forename_1', :with => 'Mattew'
   fill_in 'Surname_1', :with => 'Robbins'
-  sleep 5
+  #sleep 5
   click_on 'Go'
 end
 
@@ -47,7 +42,7 @@ end
 When(/^I complete and submit the form using label$/) do
   fill_in 'Forename_2', :with => 'John'
   fill_in 'Surname_2', :with => 'Williams'
-  sleep 5
+  #sleep 5
   click_on 'Send'
 end
 
@@ -61,7 +56,7 @@ When(/^I complete and submit the form using checkboxes and radiobuttons$/) do
   select 'Miss', :from => 'title'
   choose 'Over 16'
   check 'consent'
-  sleep 5
+  #sleep 5
   click_on 'Submit'
 end
 
@@ -71,9 +66,31 @@ end
 
 When(/^I attach a file in a form$/) do
   attach_file 'Image', '/home/thiago/images/'
-  sleep 5
+  #sleep 5
 end
 
 Then(/^I should to send a file using Capybara resources$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^I click on a div with a click handler attached$/) do
+  find('#mydiv').click
+  sleep 5
+end
+
+Then(/^I should see a message informing that div has clicked$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^I search for the relevant result$/) do
+  all('.result').each_with_index do |element, idx|
+    expect(element).to have_content ("Match #{idx + 1}")
+    #expect(page).to have_content ("Match #{idx + 1}")
+    #element.text.should == "Match #{idx + 1}"
+  end
+  #sleep 5
+end
+
+Then(/^I should see all results has searched$/) do
   pending # Write code here that turns the phrase above into concrete actions
 end
