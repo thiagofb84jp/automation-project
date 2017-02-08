@@ -75,7 +75,7 @@ end
 
 When(/^I click on a div with a click handler attached$/) do
   find('#mydiv').click
-  sleep 5
+  #sleep 5
 end
 
 Then(/^I should see a message informing that div has clicked$/) do
@@ -83,8 +83,10 @@ Then(/^I should see a message informing that div has clicked$/) do
 end
 
 When(/^I search for the relevant result$/) do
-  all('.result').each_with_index do |element, idx|
+  #find('.result').text
+  all('.matches').each_with_index do |element, idx|
     expect(element).to have_content ("Match #{idx + 1}")
+    puts "Match #{idx + 1}"
     #expect(page).to have_content ("Match #{idx + 1}")
     #element.text.should == "Match #{idx + 1}"
   end
@@ -92,5 +94,17 @@ When(/^I search for the relevant result$/) do
 end
 
 Then(/^I should see all results has searched$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^I search for results within a scope$/) do
+  within('#internet_results') do
+    all('.result').each do |elem|
+      puts elem.text
+    end
+  end
+end
+
+Then(/^I should see all results within a scope$/) do
   pending # Write code here that turns the phrase above into concrete actions
 end

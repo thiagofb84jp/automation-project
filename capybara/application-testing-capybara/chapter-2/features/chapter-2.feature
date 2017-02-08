@@ -41,3 +41,8 @@ Feature: Mastering API Components
 		Given I am on the Mastering API page
 		When I search for the relevant result
 		Then I should see all results has searched
+
+	Scenario: Search For Scoping
+		Given I am on the Mastering API page
+		When I search for results within a scope
+		Then I should see all results within a scope
