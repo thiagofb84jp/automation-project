@@ -1,5 +1,6 @@
 Given(/^I am on the blog homepage$/) do
-	visit ("/posts")
+	#visit path_to("the blog homepage")
+   visit ("/posts")
 end
 
 And(/^there are already (\d+) posts$/) do |count|
