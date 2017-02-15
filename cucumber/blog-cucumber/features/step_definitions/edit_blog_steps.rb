@@ -14,6 +14,6 @@ end
 
 Then(/^I can see it has been updated$/) do
   step %{I am on the blog homepage}
-  find("table#posts-list > tr:eq(2) > td:eq(1)").expect(page).to have_selector (@updated_title)
+  find("table#posts-list > tr:eq(2) > td:eq(1)").expect(page).to have_content(@updated_title)
   find("table#posts-list > tr:eq(2) > td:eq(2)").expect(page).to have_content(@updated_content)
 end
