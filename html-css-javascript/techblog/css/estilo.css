@@ -14,6 +14,9 @@ body{
 	background: #fff;
 	border-bottom: 1px solid #d8d8d8;
 	height: 45px;
+	position: fixed;
+	width: 100%;
+	top: 0;
 }
 
 #area{
@@ -23,7 +26,7 @@ body{
 
 #area-principal{
 	width: 720px;
-	margin: 10px auto 10px auto;
+	margin: 55px auto 10px auto;
 }
 
 #logo{
@@ -38,6 +41,7 @@ body{
 #postagem{
 	background: #fff;
 	padding: 10px;
+	margin-bottom: 10px;
 }
 
 h2{

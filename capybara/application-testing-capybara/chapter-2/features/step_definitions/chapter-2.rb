@@ -94,7 +94,8 @@ When(/^I search for the relevant result$/) do
 end
 
 Then(/^I should see all results has searched$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  page.has_selector? '#local_results'
+  expect(page).to have_selector ('#local_results')
 end
 
 When(/^I search for results within a scope$/) do
@@ -106,5 +107,10 @@ When(/^I search for results within a scope$/) do
 end
 
 Then(/^I should see all results within a scope$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content ("Local Match 1")
+  first('#res4')
+
+  #Checa que um elemento com o ID 'local_results' não existe na página
+  page.has_no_selector? ('#local_results')
+  expect(page).to have_no_selector ('#local_results')
 end
