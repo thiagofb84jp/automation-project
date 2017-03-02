@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
     <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
 
   <div class="field">
     <%= f.label :content %>
-    <%= f.time_select :content %>
+    <%= f.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= f.label :post_time %>
+    <%= f.datetime_select :post_time %>
   </div>
 
   <div class="actions">
