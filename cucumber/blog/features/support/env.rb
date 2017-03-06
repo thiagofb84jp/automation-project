@@ -4,7 +4,18 @@
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
 # files.
 
+require 'rubygems'
 require 'cucumber/rails'
+require 'launchy'
+require 'capybara/cucumber'
+
+#Capybara.register_driver :selenium do |app|
+#  Capybara::Selenium::Driver.new(app, :browser => :chrome)
+#end
+
+#Capybara.default_driver = :selenium
+
+#Capybara.page.driver.browser.manage.window.maximize
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any

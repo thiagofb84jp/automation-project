@@ -11,6 +11,7 @@
   </thead>
 
   <tbody>
+    <!-- Código Ruby que é processado, mas não é exibido -->
     <% @kinds.each do |kind| %>
       <tr>
         <td><%= kind.description %></td>
@@ -25,3 +26,6 @@
 <br>
 
 <%= link_to 'New Kind', new_kind_path %>
+<br>
+<!-- 'link_to' utilizado para retornar a página anterior -->
+<%= link_to "Back", :back %>
