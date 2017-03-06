@@ -1,0 +1,2 @@
+class Publishing < ApplicationRecord
+end
