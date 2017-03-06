@@ -1,49 +1,48 @@
 require 'test_helper'
 
-class PhonesControllerTest < ActionController::TestCase
+class PhonesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @phone = phones(:one)
   end
 
   test "should get index" do
-    get :index
+    get phones_url
     assert_response :success
-    assert_not_nil assigns(:phones)
   end
 
   test "should get new" do
-    get :new
+    get new_phone_url
     assert_response :success
   end
 
   test "should create phone" do
     assert_difference('Phone.count') do
-      post :create, phone: { contact_id: @phone.contact_id, phone: @phone.phone }
+      post phones_url, params: { phone: { contact_id: @phone.contact_id, phone: @phone.phone } }
     end
 
-    assert_redirected_to phone_path(assigns(:phone))
+    assert_redirected_to phone_url(Phone.last)
   end
 
   test "should show phone" do
-    get :show, id: @phone
+    get phone_url(@phone)
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @phone
+    get edit_phone_url(@phone)
     assert_response :success
   end
 
   test "should update phone" do
-    patch :update, id: @phone, phone: { contact_id: @phone.contact_id, phone: @phone.phone }
-    assert_redirected_to phone_path(assigns(:phone))
+    patch phone_url(@phone), params: { phone: { contact_id: @phone.contact_id, phone: @phone.phone } }
+    assert_redirected_to phone_url(@phone)
   end
 
   test "should destroy phone" do
     assert_difference('Phone.count', -1) do
-      delete :destroy, id: @phone
+      delete phone_url(@phone)
     end
 
-    assert_redirected_to phones_path
+    assert_redirected_to phones_url
   end
 end

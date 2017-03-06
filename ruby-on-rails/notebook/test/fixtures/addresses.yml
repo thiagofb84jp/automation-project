@@ -4,10 +4,10 @@ one:
   street: MyString
   city: MyString
   state: MyString
-  contact_id: 
+  contact: one
 
 two:
   street: MyString
   city: MyString
   state: MyString
-  contact_id: 
+  contact: two

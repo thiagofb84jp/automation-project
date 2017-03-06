@@ -1,49 +1,48 @@
 require 'test_helper'
 
-class AddressesControllerTest < ActionController::TestCase
+class AddressesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @address = addresses(:one)
   end
 
   test "should get index" do
-    get :index
+    get addresses_url
     assert_response :success
-    assert_not_nil assigns(:addresses)
   end
 
   test "should get new" do
-    get :new
+    get new_address_url
     assert_response :success
   end
 
   test "should create address" do
     assert_difference('Address.count') do
-      post :create, address: { city: @address.city, contact_id: @address.contact_id, state: @address.state, street: @address.street }
+      post addresses_url, params: { address: { city: @address.city, contact_id: @address.contact_id, state: @address.state, street: @address.street } }
     end
 
-    assert_redirected_to address_path(assigns(:address))
+    assert_redirected_to address_url(Address.last)
   end
 
   test "should show address" do
-    get :show, id: @address
+    get address_url(@address)
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @address
+    get edit_address_url(@address)
     assert_response :success
   end
 
   test "should update address" do
-    patch :update, id: @address, address: { city: @address.city, contact_id: @address.contact_id, state: @address.state, street: @address.street }
-    assert_redirected_to address_path(assigns(:address))
+    patch address_url(@address), params: { address: { city: @address.city, contact_id: @address.contact_id, state: @address.state, street: @address.street } }
+    assert_redirected_to address_url(@address)
   end
 
   test "should destroy address" do
     assert_difference('Address.count', -1) do
-      delete :destroy, id: @address
+      delete address_url(@address)
     end
 
-    assert_redirected_to addresses_path
+    assert_redirected_to addresses_url
   end
 end

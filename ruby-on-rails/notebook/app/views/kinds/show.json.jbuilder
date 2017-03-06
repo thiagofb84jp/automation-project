@@ -1,1 +1,1 @@
-json.extract! @kind, :id, :description, :created_at, :updated_at
+json.partial! "kinds/kind", kind: @kind

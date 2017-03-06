@@ -1,2 +1,3 @@
-class Kind < ActiveRecord::Base
+class Kind < ApplicationRecord
+	#belongs_to :contact
 end

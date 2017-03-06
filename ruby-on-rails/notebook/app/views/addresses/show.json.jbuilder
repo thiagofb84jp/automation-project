@@ -1,1 +1,1 @@
-json.extract! @address, :id, :street, :city, :state, :contact_id, :created_at, :updated_at
+json.partial! "addresses/address", address: @address

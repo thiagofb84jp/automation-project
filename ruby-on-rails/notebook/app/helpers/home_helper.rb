@@ -1,6 +1,5 @@
 module HomeHelper
-  
-  def mostrar_meu_nome
-    "Jackson Pires"
-  end
+	def mostrar_meu_nome
+		"José da Silva Soares"
+	end
 end
