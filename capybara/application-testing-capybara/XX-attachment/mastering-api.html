@@ -9,6 +9,13 @@
 				alert('div has been clicked');
 			};
 		};
+
+		$(document).ready(function()){
+			var addText = function(){
+				$('.rocks').attr('style', 'visibility;visible;');
+			}
+			setTimeout(addText, 5000);
+		};
 	</script>
 </head>
 <body>
@@ -102,6 +109,11 @@
 			<li id="res8" class="result">Internet Match 2</li>
 			<li id="res9" class="result">Internet Match 3</li>
 		</ul>
+
+		<h2>Finders and Matches</h2>
+		<h3>Refining Finders and Matches</h3>
+		<p>Aqui, deverá aparecer o seguinte texto:</p>
+		<div class="rocks" style="visibility:hidden;">Capybara Rocks</div>
 	</div>
 </body>
 </html>
