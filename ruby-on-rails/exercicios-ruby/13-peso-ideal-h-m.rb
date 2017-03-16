@@ -11,21 +11,26 @@ puts "Sexo: "
 sexo = gets.chomp
 
 if sexo == "M" then
-	peso = (72.7 * altura) - 58
+	peso_ideal = (72.7 * altura) - 58
 end
 
 if sexo == "F" then
-	peso = (62.1 * altura) - 44.7	
+	peso_ideal = (62.1 * altura) - 44.7	
 end
 
-puts "Seu peso ideal: #{peso}"
+puts "Seu peso ideal: #{peso_ideal.round(2)}"
 
-#if peso <= 17.1
-#	puts "Seu peso: #{peso}, você está abaixo do peso"
-#elsif 18.49 <= peso >= 24.99
-#	puts "Seu peso: #{peso}, você está dentro do peso"
-#elsif 25 <= peso >= 29.99
-#	puts "Seu peso: #{peso}, você está acima do peso"
-#else
-#	puts "Seu peso: #{peso}, você está com obesidade mórbida"
-#end
+puts "Qual o seu peso? "
+peso_imc = gets.to_f
+
+imc = (peso_imc) / altura**2
+
+puts "Seu IMC: #{imc.round(2)}"
+
+if imc < 18.5
+	puts "Você está abaixo do peso"
+elsif (18.5 <= imc) && (imc <= 24.9)
+	puts "Você está dentro do peso"
+else
+	puts "Você está acima do peso"
+end
