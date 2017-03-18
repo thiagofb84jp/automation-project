@@ -24,5 +24,6 @@ puts "Quanto você ganha por hora? "
 valor_hora = gets.to_f
 
 puts "Qual o número de horas trabalhadas? "
-valor_hora = gets.to_i
+hora_trabalhada = gets.to_i
 
+sal_bruto = 
