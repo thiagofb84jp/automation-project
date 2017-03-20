@@ -1,6 +1,6 @@
-Feature: Show Books List
+Feature: Show Library List
     	 As a library admin user
-         I want to see all my books added
+         I want to see all items of my library
 
 Scenario: Show Books List
 		Given I am the library home page

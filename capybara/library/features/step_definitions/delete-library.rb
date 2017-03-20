@@ -1,6 +1,7 @@
 Given(/^I am the books home page and there is book titled with "([^"]*)" and subtitle with "([^"]*)"$/) do |title, subtitle|
   visit 'http://localhost:3000/home/index'
   click_link_or_button 'Books'
+end
 
 When(/^I select a book titled "([^"]*)" and subtitle with "([^"]*)" and click "([^"]*)"$/) do |title, subtitle, destroy|
   @title = title
