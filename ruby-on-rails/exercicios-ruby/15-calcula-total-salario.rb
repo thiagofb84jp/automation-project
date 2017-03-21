@@ -21,9 +21,24 @@
 #Obs.: Salário Bruto - Descontos = Salário Líquido.
 
 puts "Quanto você ganha por hora? "
-valor_hora = gets.to_f
+valorHora = gets.to_f
 
 puts "Qual o número de horas trabalhadas? "
-hora_trabalhada = gets.to_i
+horaTrabalhada = gets.to_i
 
-sal_bruto = 
+salBruto = valorHora * horaTrabalhada
+
+ImpostoRenda = (salBruto * 11/100)
+INSS = (salBruto * 8/100)
+sindicato = (salBruto * 5/100)
+
+valorDescontos = ImpostoRenda + INSS + sindicato
+salLiquido = salBruto - valorDescontos
+
+puts "VALORES A SEREM RECEBIDOS:\n"
+puts "Salário Bruto: R$ #{salBruto}\n"
+puts "Imposto de Renda: R$ #{ImpostoRenda}\n"
+puts "INSS: R$ #{INSS}\n"
+puts "Sindicato: R$ #{sindicato}\n"
+
+puts "Seu salário líquido é de: R$ #{salLiquido}"
