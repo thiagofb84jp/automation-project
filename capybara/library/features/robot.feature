@@ -1,4 +1,4 @@
-Feature: Robot
+Feature: Robot Emotions
 
 
 	Scenario: Tickle a grumpy robot
