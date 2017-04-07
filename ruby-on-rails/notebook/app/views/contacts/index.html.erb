@@ -34,3 +34,6 @@
 <br>
 <!-- 'link_to' utilizado para retornar a página anterior -->
 <%= link_to "Back", :back %>
+
+<% abc = "ABC" %>
+<%= render partial: "/contacts/shared/test", locals: {xyz: abc} %>
