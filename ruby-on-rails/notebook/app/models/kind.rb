@@ -1,3 +1,4 @@
 class Kind < ApplicationRecord
-	#belongs_to :contact
+  #has_many informa que um contato pode possuir mais de um tipo associado
+  has_many :contacts
 end
