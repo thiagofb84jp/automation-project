@@ -1,0 +1,10 @@
+source :rubygems
+
+#Classy web-development dressed in a DSL (official / canonical repo) http://www.sinatrarb.com/
+gem 'sinatra'
+
+group :development do
+	gem 'rspec'
+	gem 'cucumber'
+	gem 'capybara'	
+end

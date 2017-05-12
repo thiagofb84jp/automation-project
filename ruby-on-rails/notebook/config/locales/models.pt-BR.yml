@@ -6,9 +6,13 @@
         other: Contatos
       address:
         one: Endereço
-        other: Endereços        
+        other: Endereços
+      phone:
+        one: Telefone
+        other: Telefones
     attributes:
       contact:
+        contact: Contato
         name: Nome
         email: E-mail
         kind: Tipo do Contato
@@ -20,3 +24,5 @@
         state: Estado
         contact_id: Contato
         contact: Contato
+      phone:
+        phone: Telefone  
