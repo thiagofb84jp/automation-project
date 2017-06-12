@@ -2,9 +2,12 @@ source :rubygems
 
 #Classy web-development dressed in a DSL (official / canonical repo) http://www.sinatrarb.com/
 gem 'sinatra'
+#A service manager that helps start and stop services, for example, when testing the interaction between processes in an automated integration test http://github.com/leadtune/service_ma…
+gem 'service_manager'
 
 group :development do
 	gem 'rspec'
 	gem 'cucumber'
-	gem 'capybara'	
+	gem 'capybara'
+	gem 'launchy'
 end

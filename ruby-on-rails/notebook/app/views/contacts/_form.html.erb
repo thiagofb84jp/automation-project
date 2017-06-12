@@ -1,16 +1,4 @@
 <%= form_for(@contact, html: {class: "smart-green"}) do |f| %>
-  <% if contact.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
-
-      <ul>
-      <% contact.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <h1>Contact</h1>
 
   <div class="field">
@@ -66,4 +54,17 @@
     <%= f.submit "Enviar" ,class: "button" %>
     <%= link_to 'Back', contacts_path ,class: "button-back" %>
   </div>
-<% end %>
+
+  <% if contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= "#{pluralize(@contact.errors.count, '')} #{t('messages.errors')}:" %></h2>
+
+      <ul>
+      <% contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% end %>

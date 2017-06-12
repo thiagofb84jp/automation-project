@@ -2,3 +2,4 @@
   messages:
     confirm: Tem certeza?
     listing: Listando
+    errors: erros impediram o cadastro de um novo contato...
