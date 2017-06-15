@@ -1,0 +1,20 @@
+When(/^I fill in "([^"]*)" and "([^"]*)" and if there are seats$/) do |arg1, arg2|
+  select 'July', :from => 'departing'
+  select 'December (two years from now)', :from => 'returning'
+  click_button 'Search'
+end
+
+Then(/^I should see a message informing seats are avaliable$/) do
+  expect(page).to have_content 'Seats available!'
+  expect(page).to have_content 'Call now on 0800 MARSAIR to book!'
+end
+
+When(/^I fill in "([^"]*)" and "([^"]*)" and if there are no seats$/) do |arg1, arg2|
+  select 'July', :from => 'departing'
+  select 'December (next year)', :from => 'returning'
+  click_button 'Search'
+end
+
+Then(/^I should see a message informing no more seats are avaliable$/) do
+  expect(page).to have_content 'Sorry, there are no more seats available.'
+end

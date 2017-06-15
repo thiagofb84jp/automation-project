@@ -7,10 +7,10 @@ driver.navigate.to("file:///media/thiago/9414FF9714FF7B16/projetos-automacao/sel
 
 #Find Element By Partial Link Text
 driver.find_element(:link_text, "Hyperlink").click
-driver.find_element(:partial_link_text, "Full").click
+driver.find_element(:partial_link_text, "Ful").click
 driver.find_element(:link_text, "Back").click
 
-driver.find_element(:partial_link_text, "Partial").click
+driver.find_element(:partial_link_text, "Part").click
 driver.find_element(:link_text, "Back").click
 sleep 2
 
