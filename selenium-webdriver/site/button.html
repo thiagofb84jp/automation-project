@@ -16,7 +16,31 @@
    }
    function chooseSafariMessage(){
       document.getElementById("choose_safari_msg").innerHTML = "You choose a Safari Browser! Congratulations!"; 
-   }         
+   }
+   function validateInput(){
+      var x, text;
+
+      x = document.getElementById("numb").value;
+
+      if (isNaN(x) || x < 1 || x > 10){
+        text = "Input not valid";
+      }else{
+        text = "Input OK";
+      }
+      document.getElementById("demo").innerHTML = text;
+   }
+   function showLoginPassword(){
+      var login, passwrd;
+
+      login = document.getElementById("login").value;
+      passwrd = document.getElementById("passwrd").value;
+
+      textLogin = "<b>Your login</b>: " + login;
+      textPasswrd = "<b>Your password</b>: " + passwrd;
+
+      pLogin = document.getElementById("pLogin").innerHTML = textLogin;
+      pPasswrd = document.getElementById("pPasswrd").innerHTML = textPasswrd;
+   }
  </script>
  <title>Buttons</title>
 </head>
@@ -40,6 +64,38 @@
 
   <p><button id="choose_safari_btn" type="button" onclick="chooseSafariMessage();" class="safari" data-id="123" style="font-size: 14px;">Choose Safari</button></p>
   <p id="choose_safari_msg"></p>
+  
+  <br>
+
+  <div id="validate_input">
+    <p><b>Validate Input</b></p>
+
+    <p>Please input a number between 1 and 10:</p>
+
+    <input id="numb">
+
+    <button type="button" onclick="validateInput();">Submit</button>
+    <p id="demo"></p>
+  </div>
+
+  <br>
+
+  <div id="form">
+    <p><b>Form</b></p>
+
+    <p>Please input your login and password:</p>
+
+    Login: <input id="login" type="text">
+    Password: <input id="passwrd" type="password">
+
+    <button type="button" onclick="showLoginPassword();">Submit</button>
+    
+    <p id="pFail"></p>
+    <p id="pLogin"></p>
+    <p id="pPasswrd"></p>
+  </div>
+
+  <br>
 
   <div>
     <p><b>Submit button in a form</b></p>

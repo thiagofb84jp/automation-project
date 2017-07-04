@@ -7,6 +7,8 @@ end
 
 #Manage your Ruby application's gem dependencies https://bundler.io
 gem 'bundler'
+#Bootstrap in Rails Assert
+gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
 #Pines Notify for Rails 3.1 Asset Pipeline
 gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

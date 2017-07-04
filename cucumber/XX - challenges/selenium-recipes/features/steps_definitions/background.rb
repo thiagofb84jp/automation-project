@@ -5,3 +5,7 @@ end
 When(/^I click in Hyperlink home page$/) do
   click_link_or_button 'Hyperlink'
 end
+
+When(/^I click in Button home page$/) do
+  click_link_or_button 'Button'
+end

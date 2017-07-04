@@ -7,7 +7,7 @@ Feature: Buttons
 		Given I acess a Test Site for Selenium Recipes home page
 		When I click in Button home page
 	
-	Scenario Outline:
+	Scenario Outline: Choose Buttons
 		When I choose the <Button>
 		Then I see the following message: <Message>
 
@@ -18,3 +18,11 @@ Feature: Buttons
 		| Choose Internet Explorer|You choose a IE Browser! Congratulations! 	 |
 		| Choose Opera       |You choose a Opera Browser! Congratulations! 	     |
 		| Choose Safari      |You choose a Safari Browser! Congratulations! 	 |
+
+	Scenario Outline: Validate Input
+		When I insert a input <Value>
+		Then I see the following message: <Message>
+
+	Examples: 
+		|	Value 		|	Message		|
+		|     1 		|   Input OK    |
