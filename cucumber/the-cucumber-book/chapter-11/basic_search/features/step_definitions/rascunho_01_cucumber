@@ -1,9 +1,0 @@
-	Scenario Outline: Seats No Avaliable
-		When I select the field "Departure" in a period that there are no more seats
-		And I select the field "Return" in a period that there are no more seats
-		Then I should see a message informing no more seats are avaliable
-
-	Examples:
-		| Departure | 			Return 				  |
-		|   July    | 			July   				  |
-		|   July    | 	  December (next year)	      |
