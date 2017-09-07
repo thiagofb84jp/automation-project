@@ -1,0 +1,24 @@
+| CUCUMBER |
+
+
+::PREPARANDO O SISTEMA::
+
+É preciso instalar as seguintes Gems:
+- Ruby (https://www.ruby-lang.org/pt/)
+- Selenium Webdriver (https://github.com/vertis/selenium-webdriver)
+- Chrome Driver (https://sites.google.com/a/chromium.org/chromedriver/downloads)
+- IE Drive Server (http://www.seleniumhq.org/download/)
+- RSpec (http://rspec.info/)
+
+
+1. Instalar a versão mais atualizada do Ruby:
+
+a) gem install ruby (instala a versão mais autalizada do Ruby)
+b) ruby -v (verifica a versão mais atualizada do Ruby)
+c) gem -v (verifica a versão mais atualizada das Gems)
+d) gem update --system (atualiza todas as gems do sistema)
+
+2. Instalar a versão mais atualizada do Selenium Webdriver:
+
+a) gem install selenium-webdriver (instala a versão mais autalizada do Selenium Webdriver)
+b) 
