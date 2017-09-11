@@ -18,11 +18,8 @@ describe "Selenium Recipes - Chapter 4 (Buttons)" do
 		@driver.quit
 	end
 
-	it "Click a button by text" do
-		@driver.find_element(:xpath, '//*[@id="choose_firefox_btn"]').click
-		@driver.find_element(:xpath, '//*[@id="choose_chrome_btn"]').click
-		@driver.find_element(:xpath, '//*[@id="choose_ie_btn"]').click
-		@driver.find_element(:xpath, '//*[@id="choose_opera_btn"]').click
-		@driver.find_element(:xpath, '//*[@id="choose_safari_btn"]').click
+	it "Click a button via Javascript" do
+		the_btn = @driver.find_element(:id, "searchBtn")
+		@driver.execute_script("arguments[0].click();", the_btn);
 	end
 end

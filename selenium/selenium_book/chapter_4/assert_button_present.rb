@@ -18,11 +18,10 @@ describe "Selenium Recipes - Chapter 4 (Buttons)" do
 		@driver.quit
 	end
 
-	it "Click a button by text" do
-		@driver.find_element(:xpath, '//*[@id="choose_firefox_btn"]').click
-		@driver.find_element(:xpath, '//*[@id="choose_chrome_btn"]').click
-		@driver.find_element(:xpath, '//*[@id="choose_ie_btn"]').click
-		@driver.find_element(:xpath, '//*[@id="choose_opera_btn"]').click
-		@driver.find_element(:xpath, '//*[@id="choose_safari_btn"]').click
+	it "Assert a button present" do
+		expect(@driver.find_element(:id, "choose_firefox_btn").displayed?).to be_truthy
+		@driver.find_element(:link_text, "Hide").click
+		sleep 0.5
+		expect(@driver.find_element(:id, "choose_firefox_btn").displayed?).to be_falsey
 	end
 end

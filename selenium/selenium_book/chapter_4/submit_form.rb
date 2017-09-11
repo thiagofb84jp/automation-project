@@ -18,11 +18,12 @@ describe "Selenium Recipes - Chapter 4 (Buttons)" do
 		@driver.quit
 	end
 
-	it "Click a button by text" do
-		@driver.find_element(:xpath, '//*[@id="choose_firefox_btn"]').click
-		@driver.find_element(:xpath, '//*[@id="choose_chrome_btn"]').click
-		@driver.find_element(:xpath, '//*[@id="choose_ie_btn"]').click
-		@driver.find_element(:xpath, '//*[@id="choose_opera_btn"]').click
-		@driver.find_element(:xpath, '//*[@id="choose_safari_btn"]').click
+	it "Submit a form" do
+		@driver.find_element(:name, "login").send_keys("agileway")
+		@driver.find_element(:name, "passwrd").send_keys("secret")
+		@driver.find_element(:xpath, '//*[@id="form"]/button').click
+		expect(@driver.page_source).to include("Your login")
+		expect(@driver.page_source).to include("Your password")
+		sleep 2
 	end
 end
