@@ -2,22 +2,22 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 
 public class TesteRegrasDeNegocio {
 
 	private WebDriver driver;
+	private DSL dsl;
+	private CampoTreinamentoPage page;
 
 	@Before
 	public void inicializa() {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("file:///" + System.getProperty("user.dir") + "/src/main/resources/componentes.html");
+		dsl = new DSL(driver);
+		page = new CampoTreinamentoPage(driver);
 	}
 
 	@After
@@ -27,74 +27,48 @@ public class TesteRegrasDeNegocio {
 
 	@Test
 	public void deveValidarNomeObrigatorio() {
-		driver.findElement(By.id("elementosForm:cadastrar")).click();
-		Alert alert = driver.switchTo().alert();
-		String msg = alert.getText();
-
-		Assert.assertEquals("Nome eh obrigatorio", msg);
-		alert.accept();
+		page.cadastrar();
+		Assert.assertEquals("Nome eh obrigatorio", dsl.alertaObterTextoEAceita());
 	}
 
 	@Test
 	public void deveValidarSobrenomeObrigatorio() {
-		driver.findElement(By.id("elementosForm:nome")).sendKeys("Joao Antonio");
-		driver.findElement(By.id("elementosForm:cadastrar")).click();
+		page.setNome("Joao Antonio");
+		page.cadastrar();
 
-		Alert alert = driver.switchTo().alert();
-		String msg = alert.getText();
-
-		Assert.assertEquals("Sobrenome eh obrigatorio", msg);
-		alert.accept();
+		Assert.assertEquals("Sobrenome eh obrigatorio", dsl.alertaObterTextoEAceita());
 	}
 
 	@Test
 	public void deveValidarSexoObrigatorio() {
-		driver.findElement(By.id("elementosForm:nome")).sendKeys("Joao Antonio");
-		driver.findElement(By.id("elementosForm:sobrenome")).sendKeys("da Silva Lima Paiva");
-		driver.findElement(By.id("elementosForm:cadastrar")).click();
+		page.setNome("Joao Antonio");
+		page.setSobrenome("da Silva Lima Paiva");
+		page.cadastrar();
 
-		Alert alert = driver.switchTo().alert();
-		String msg = alert.getText();
-
-		Assert.assertEquals("Sexo eh obrigatorio", msg);
-		alert.accept();
+		Assert.assertEquals("Sexo eh obrigatorio", dsl.alertaObterTextoEAceita());
 	}
 
 	@Test
-	public void deveValidarComidaObrigatorio() {
-		driver.findElement(By.id("elementosForm:nome")).sendKeys("Joao Antonio");
-		driver.findElement(By.id("elementosForm:sobrenome")).sendKeys("da Silva Lima Paiva");
-		driver.findElement(By.id("elementosForm:sexo:0")).click();
-		driver.findElement(By.id("elementosForm:comidaFavorita:0")).click();
-		driver.findElement(By.id("elementosForm:comidaFavorita:3")).click();
+	public void deveValidarComidaVegetariano() {
+		page.setNome("Joao Antonio");
+		page.setSobrenome("da Silva Lima Paiva");
+		page.setSexoMasculino();
+		page.setComidaCarne();
+		page.setComidaVegetariano();
+		page.cadastrar();
 
-		driver.findElement(By.id("elementosForm:cadastrar")).click();
-
-		Alert alert = driver.switchTo().alert();
-		String msg = alert.getText();
-
-		Assert.assertEquals("Tem certeza que voce eh vegetariano?", msg);
-		alert.accept();
+		Assert.assertEquals("Tem certeza que voce eh vegetariano?", dsl.alertaObterTextoEAceita());
 	}
 
 	@Test
 	public void deveValidarEsportistaIndeciso() {
-		driver.findElement(By.id("elementosForm:nome")).sendKeys("Joao Antonio");
-		driver.findElement(By.id("elementosForm:sobrenome")).sendKeys("da Silva Lima Paiva");
-		driver.findElement(By.id("elementosForm:sexo:0")).click();
-		driver.findElement(By.id("elementosForm:comidaFavorita:0")).click();
+		page.setNome("Joao Antonio");
+		page.setSobrenome("da Silva Lima Paiva");
+		page.setSexoMasculino();
+		page.setComidaCarne();
+		page.setEsporte("Corrida", "O que eh esporte?");
+		page.cadastrar();
 
-		WebElement esportes = driver.findElement(By.id("elementosForm:esportes"));
-		Select combo = new Select(esportes);
-		combo.selectByVisibleText("Corrida");
-		combo.selectByVisibleText("O que eh esporte?");
-
-		driver.findElement(By.id("elementosForm:cadastrar")).click();
-
-		Alert alert = driver.switchTo().alert();
-		String msg = alert.getText();
-
-		Assert.assertEquals("Voce faz esporte ou nao?", msg);
-		alert.accept();
+		Assert.assertEquals("Voce faz esporte ou nao?", dsl.alertaObterTextoEAceita());
 	}
 }
