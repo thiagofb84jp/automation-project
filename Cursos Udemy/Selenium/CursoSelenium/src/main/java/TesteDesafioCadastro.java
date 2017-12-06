@@ -8,7 +8,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class TesteDesafioCadastro {
 
 	private WebDriver driver;
-	private DSL dsl;
 	private CampoTreinamentoPage page;
 
 	@Before
@@ -16,7 +15,6 @@ public class TesteDesafioCadastro {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("file:///" + System.getProperty("user.dir") + "/src/main/resources/componentes.html");
-		dsl = new DSL(driver);
 		page = new CampoTreinamentoPage(driver);
 	}
 

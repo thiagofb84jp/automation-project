@@ -25,5 +25,6 @@ public class ConversaoNumerica {
 		// Exemplo 4: Conversão implícita
 		double d = 1001;
 		System.out.println(d);
+
 	}
 }

@@ -1,20 +1,37 @@
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameter;
+import org.junit.runners.Parameterized.Parameters;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+@RunWith(Parameterized.class)
 public class TesteRegrasCadastro {
 
 	private WebDriver driver;
 	private DSL dsl;
 	private CampoTreinamentoPage page;
-	private String nome;
-	private String sobrenome;
-	private String sexo;
-	private List<String> comidas;
+	
+	@Parameter
+	public String nome;
+	@Parameter(value=1)
+	public String sobrenome;
+	@Parameter(value=2)
+	public String sexo;
+	@Parameter(value=3)
+	public List<String> comidas;
+	@Parameter(value=4)
+	public String[] esportes;
+	@Parameter(value=5)
+	public String msg;
 
 	@Before
 	public void inicializa() {
@@ -29,29 +46,38 @@ public class TesteRegrasCadastro {
 	public void finaliza() {
 		driver.quit();
 	}
+	
+	//Foram criados 5 (cinco) cenários em cima da mesma estrutura
+	@Parameters
+	public static Collection<Object[]> getCollection(){
+		return Arrays.asList(new Object[][]{
+			{"", "", "", Arrays.asList(), new String[] {}, "Nome eh obrigatorio"},
+			{"João", "", "", Arrays.asList(), new String[] {}, "Sobrenome eh obrigatorio"},
+			{"João", "da Silva Duarte", "", Arrays.asList(), new String[] {}, "Sexo eh obrigatorio"},
+			{"João", "da Silva Duarte", "Masculino", Arrays.asList("Carne", "Vegetariano"), new String[] {}, "Tem certeza que voce eh vegetariano?"},
+			{"João", "da Silva Duarte", "Masculino", Arrays.asList("Carne"), new String[] {"Karate", "O que eh esporte?"}, "Voce faz esporte ou nao?"}
+		});
+	}
 
+	@Test
 	public void deveValidarRegras() {
 		page.setNome(nome);
 		page.setSobrenome(sobrenome);
+		
 		if (sexo.equals("Masculino")) {
 			page.setSexoMasculino();
-		} else {
+		}if (sexo.equals("Feminino")) {
 			page.setSexoFeminino();
 		}
-		// PAROU AQUI
-		// 30/11/2017
-		if (comidas.contains("Carne"))
-			page.setComidaCarne();
-		if (comidas.contains("Pizza"))
-			page.setComidaPizza();
-		if (comidas.contains("Vegetariano"))
-			page.setComidaVegetariano();
+		
+		if (comidas.contains("Carne")) page.setComidaCarne();
+		if (comidas.contains("Pizza")) page.setComidaPizza();
+		if (comidas.contains("Vegetariano")) page.setComidaVegetariano();
 
-		page.setComidaCarne();
-		page.setEsporte("Corrida", "O que eh esporte?");
+		page.setEsporte(esportes);
+		
 		page.cadastrar();
-
-		Assert.assertEquals("Voce faz esporte ou nao?", dsl.alertaObterTextoEAceita());
+		System.out.println(msg);
+		Assert.assertEquals(msg, dsl.alertaObterTextoEAceita());
 	}
-
 }

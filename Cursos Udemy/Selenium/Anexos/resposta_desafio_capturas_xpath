@@ -1,0 +1,9 @@
+Capturar (através do Xpath/Firepath) os seguintes componentes:
+
+1. (//input[@id='elementosForm:nome'])
+2. (//input[@value='F' and @name='elementosForm:sexo'])
+3. (.//*[@id='elementosForm:comidaFavorita:2']/../label) ou (.//*[@id='elementosForm:comidaFavorita:2']/following-sibling::label)
+4. (.//*[@id='tabelaSemJSF']//td[.='Usuario B'])
+5. (.//*[@id='elementosForm:tableUsuarios']//td[.='Maria']/..//input[@type='button'])
+6. (.//*[@id='elementosForm:tableUsuarios']//td[1][.='Doutorado']/..//td[2][.='Doutorado']/..//input[@type='radio'])
+7. ((.//*[@id='elementosForm:tableUsuarios']//td[2][.='Superior'])[2]/..//input[@type='text'])
