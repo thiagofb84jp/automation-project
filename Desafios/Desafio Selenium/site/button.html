@@ -1,16 +1,82 @@
 <html>
 <head>
  <link rel="stylesheet" type="text/css" href="style.css"/>
- <script type="text/javascript" src="jquery.js"></script>
+ <!-- <script type="text/javascript" src="jquery.js"> -->
+ <script type="text/javascript">
+   function clickFirefox(){
+      document.getElementById("firefox").innerHTML = "You choose Firefox! Congratulations!";
+   }
+   function clickChrome(){
+      document.getElementById("chrome").innerHTML = "You choose Google Chrome! Congratulations!";
+   }
+   function clickIE(){
+      document.getElementById("ie").innerHTML = "You choose Internet Explorer! Congratulations!";
+   }
+   function clickOpera(){
+      document.getElementById("opera").innerHTML = "You choose Opera! Congratulations!";
+   }
+   function clickSafari(){
+      document.getElementById("safari").innerHTML = "You choose Safari! Congratulations!";
+   }
+   function validateInput(){
+      var x, text;
+      x =  document.getElementById("number").value;
+
+      if(isNaN(x) || x < 1 || x > 10){
+        text = "Input is not valid";
+      }else{
+        text = "Input OK";
+      }
+      document.getElementById("value").innerHTML =  text;
+   }
+ </script>
 </head>
 <body>
-<div id="container">
-<h2>Button</h2>
 
+<div id="container">
+<h1>Button</h1>
+<!--   
   <p><b>Standard button</b></p>
 
-  <p><button id="choose_selenium_btn" class="nav" data-id="123" style="font-size: 14px;">Choose Selenium</button></p>  
-  
+  <p><button id="choose_selenium_btn" class="nav" data-id="123" style="font-size: 14px;">Choose Selenium</button></p>
+-->  
+  <h2>Choose navigate</h2>
+  <p>
+    <button id="firefox-button" onclick="clickFirefox();" class="nav" data-id="123" style="font-size: 14px;">Choose Firefox</button>
+    <p id="firefox"></p>
+  </p>
+  <p>
+    <button id="chrome-button"  onclick="clickChrome();" class="nav" data-id="123" style="font-size: 14px;">Choose Chrome</button>
+    <p id="chrome"></p>
+  </p>
+  <p>
+    <button id="ie-button"  onclick="clickIE();" class="nav" data-id="123" style="font-size: 14px;">Choose Internet Explorer</button>
+    <p id="ie"></p>
+  </p>
+  <p>
+    <button id="opera-button"  onclick="clickOpera();" class="nav" data-id="123" style="font-size: 14px;">Choose Opera</button>
+  </p>
+  <p id="opera"></p>
+  <p>
+    <button id="safari-button"  onclick="clickSafari();" class="nav" data-id="123" style="font-size: 14px;">Choose Safari</button>
+    <p id="safari"></p>
+  </p>
+  <hr>
+
+  <h2>JavaScript Can Validate Input</h2>
+
+  <p>Please input a number between 1 and 10:</p>
+
+  <input id="number">
+
+  <button id="value-input" type="button" onclick="validateInput()">Submit</button>
+
+  <p id="value"></p>
+  <hr>
+
+  <a href="index.html">Voltar</a>
+
+  <!--
 
   <div>
     <p><b>Submit button in a form</b></p>
@@ -41,7 +107,8 @@
       <input type="submit" value="" id="searchBtn" style="background: url(images/search.jpg) center center no-repeat;"/>
     </form>
   </div>
-  
+  -->
+
 </div>
 </body>
 </html>

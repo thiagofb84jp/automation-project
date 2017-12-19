@@ -5,9 +5,9 @@ public class DataTeste {
 	public static void main(String[] args) {
 		Data nascimento = new Data();
 
-		nascimento.dia = 19;
-		nascimento.mes = 10;
-		nascimento.ano = 1984;
+//		nascimento.dia = 19;
+//		nascimento.mes = 10;
+//		nascimento.ano = 1984;
 		
 		Data casamento = new Data(8, 9, 2010);
 

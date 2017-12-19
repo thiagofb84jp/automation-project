@@ -12,18 +12,26 @@ public class Data {
 	int mes;
 	int ano;
 
+	/*
+	 * Este 'this' representa um construtor
+	 */
 	Data() {
-
+		this(1, 1, 2017);
 	}
 
-	Data(int d, int m, int a) {
-		dia = d;
-		mes = m;
-		ano = a;
+	/*
+	 * A palavra 'this' significa a instância que está sendo criada neste momento,
+	 * sendo uma forma de diferenciar as variáveis de instância, significando o
+	 * objeto atual que está sendo executado no momento
+	 */
+	Data(int dia, int mes, int ano) {
+		this.dia = dia;
+		this.mes = mes;
+		this.ano = ano;
 	}
 
 	String formatar() {
-		return String.format("%d/%d/%d", dia, mes, ano);
+		return String.format("%d/%d/%d", this.dia, mes, ano);
 	}
 
 }
