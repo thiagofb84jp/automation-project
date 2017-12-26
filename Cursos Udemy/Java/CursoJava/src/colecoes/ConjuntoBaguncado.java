@@ -16,6 +16,28 @@ public class ConjuntoBaguncado {
 		System.out.println("Add...");
 		System.out.println(conjunto.add(1));
 		System.out.println(conjunto.add(10));
+		System.out.println("Size... " + conjunto.size()); // [6] elementos
+
+		System.out.println("Remove...");
+		System.out.println(conjunto.remove('a'));
+
+		System.out.println("Size... " + conjunto.size());
+		System.out.println("Contains...");
+		System.out.println(conjunto.contains('a')); // False
+		System.out.println(conjunto.contains(1)); // True
+
+		Set nums = new HashSet();
+		nums.add(1);
+		nums.add(2);
+		nums.add(3);
+
+		// conjunto.addAll(nums);
+		conjunto.retainAll(nums);
+		System.out.println("Size...");
+		System.out.println(conjunto.size());
+
+		conjunto.clear();
+		System.out.println(conjunto.isEmpty());// Verifica se o conjunto de elementos encontra-se vazio
 	}
 
 }

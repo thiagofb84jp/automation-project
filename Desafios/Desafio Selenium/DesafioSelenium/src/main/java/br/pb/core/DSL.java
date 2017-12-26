@@ -21,6 +21,10 @@ public class DSL {
 	public String obterTexto(By by) {
 		return getDriver().findElement(by).getText();
 	}
+	
+	public void selecionarArea(By by) {
+		getDriver().findElement(by).click();
+	}
 
 	/********* Botão ************/
 	public void clicarBotao(By by) {
