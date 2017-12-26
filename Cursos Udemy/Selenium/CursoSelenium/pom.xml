@@ -3,6 +3,7 @@
   <groupId>br.pb.udemycurso</groupId>
   <artifactId>CursoSelenium</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
   <dependencies>
   	<dependency>
   		<groupId>org.seleniumhq.selenium</groupId>
@@ -10,4 +11,5 @@
   		<version>3.4.0</version>
   	</dependency>
   </dependencies>
+  
 </project>

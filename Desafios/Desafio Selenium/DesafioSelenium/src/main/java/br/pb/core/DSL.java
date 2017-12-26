@@ -31,6 +31,7 @@ public class DSL {
 		getDriver().findElement(By.id(id)).click();
 	}
 	
+	/********* Links ************/
 	public void clicarLink(String link) {
 		getDriver().findElement(By.linkText(link)).click();
 	}

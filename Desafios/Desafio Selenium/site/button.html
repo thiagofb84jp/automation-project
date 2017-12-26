@@ -1,5 +1,6 @@
 <html>
 <head>
+ <title>Button</title>
  <link rel="stylesheet" type="text/css" href="style.css"/>
  <!-- <script type="text/javascript" src="jquery.js"> -->
  <script type="text/javascript">
@@ -29,6 +30,24 @@
       }
       document.getElementById("value").innerHTML =  text;
    }
+  function showLoginPassword(){
+      var login, passwrd, textFail;
+
+      login = document.getElementById("login").value;
+      passwrd = document.getElementById("passwrd").value;
+
+      if (login == "" || passwrd == ""){
+        textFail = "Input is not valid";
+
+        pFail = document.getElementById("pFail").innerHTML = textFail;
+      }else{
+        textLogin = "<b>Your login</b>: " + login;
+        textPasswrd = "<b>Your password</b>: " + passwrd;
+
+        pLogin = document.getElementById("pLogin").innerHTML = textLogin;
+        pPasswrd = document.getElementById("pPasswrd").innerHTML = textPasswrd;
+      }
+   }
  </script>
 </head>
 <body>
@@ -40,42 +59,53 @@
 
   <p><button id="choose_selenium_btn" class="nav" data-id="123" style="font-size: 14px;">Choose Selenium</button></p>
 -->  
-  <h2>Choose navigate</h2>
-  <p>
-    <button id="firefox-button" onclick="clickFirefox();" class="nav" data-id="123" style="font-size: 14px;">Choose Firefox</button>
-    <p id="firefox"></p>
-  </p>
-  <p>
-    <button id="chrome-button"  onclick="clickChrome();" class="nav" data-id="123" style="font-size: 14px;">Choose Chrome</button>
-    <p id="chrome"></p>
-  </p>
-  <p>
-    <button id="ie-button"  onclick="clickIE();" class="nav" data-id="123" style="font-size: 14px;">Choose Internet Explorer</button>
-    <p id="ie"></p>
-  </p>
-  <p>
-    <button id="opera-button"  onclick="clickOpera();" class="nav" data-id="123" style="font-size: 14px;">Choose Opera</button>
-  </p>
-  <p id="opera"></p>
-  <p>
-    <button id="safari-button"  onclick="clickSafari();" class="nav" data-id="123" style="font-size: 14px;">Choose Safari</button>
-    <p id="safari"></p>
-  </p>
+  <div id="chosse-navigate">
+    <h2>Choose navigate</h2>
+    <p>
+      <button id="firefox-button" onclick="clickFirefox();" class="nav" data-id="123" style="font-size: 14px;">Choose Firefox</button>
+      <p id="firefox"></p>
+    </p>
+    <p>
+      <button id="chrome-button"  onclick="clickChrome();" class="nav" data-id="123" style="font-size: 14px;">Choose Chrome</button>
+      <p id="chrome"></p>
+    </p>
+    <p>
+      <button id="ie-button"  onclick="clickIE();" class="nav" data-id="123" style="font-size: 14px;">Choose Internet Explorer</button>
+      <p id="ie"></p>
+    </p>
+    <p>
+      <button id="opera-button"  onclick="clickOpera();" class="nav" data-id="123" style="font-size: 14px;">Choose Opera</button>
+    </p>
+    <p id="opera"></p>
+    <p>
+      <button id="safari-button"  onclick="clickSafari();" class="nav" data-id="123" style="font-size: 14px;">Choose Safari</button>
+      <p id="safari"></p>
+    </p>    
+  </div>
   <hr>
 
-  <h2>JavaScript Can Validate Input</h2>
+  <div id="validate-input">
+      <h2>JavaScript Can Validate Input</h2>
+      <p>Please input a number between 1 and 10:</p>
+      <input id="number">
+      <button id="value-input" type="button" onclick="validateInput()">Submit</button>
+      <p id="value"></p>    
+  </div>
 
-  <p>Please input a number between 1 and 10:</p>
-
-  <input id="number">
-
-  <button id="value-input" type="button" onclick="validateInput()">Submit</button>
-
-  <p id="value"></p>
   <hr>
-
-  <a href="index.html">Voltar</a>
-
+  <div id="acessar-sistema">
+      <h2>Acess System</h2>
+      <p>Please input your login and password:</p>
+      <fieldset>
+      <legend>Cadastro</legend>
+        Login: <input id="login" type="text" name="login">
+        Senha: <input id="passwrd" type="password" name="passwrd">
+      <button type="button" onclick="showLoginPassword();">Salvar</button>
+      <p id="pFail"></p>
+      <p id="pLogin"></p>
+      <p id="pPasswrd"></p>
+    </fieldset>
+  </div>
   <!--
 
   <div>
@@ -108,7 +138,9 @@
     </form>
   </div>
   -->
-
+  <br>
+  <hr>
+  <a href="index.html">Voltar</a>
 </div>
 </body>
 </html>

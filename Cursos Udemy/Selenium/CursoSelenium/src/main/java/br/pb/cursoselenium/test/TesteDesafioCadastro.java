@@ -1,4 +1,5 @@
 package br.pb.cursoselenium.test;
+
 import static br.pb.cursoselenium.core.DriverFactory.getDriver;
 
 import org.junit.Assert;
@@ -11,6 +12,14 @@ import br.pb.cursoselenium.page.CampoTreinamentoPage;
 public class TesteDesafioCadastro extends BaseTest {
 
 	private CampoTreinamentoPage page;
+
+	String getCadastrado = "Cadastrado!";
+	String getNome = "Jose Antonio";
+	String getSobrenome = "da Silva Gomes Lima";
+	String getSexo = "Masculino";
+	String getComida = "Frango Pizza";
+	String getEscolaridade = "mestrado";
+	String getEsportes = "Natacao Corrida";
 
 	@Before
 	public void inicializa() {
@@ -28,14 +37,6 @@ public class TesteDesafioCadastro extends BaseTest {
 		page.setEscolaridade("Mestrado");
 		page.setEsporte("Natacao", "Corrida");
 		page.cadastrar();
-
-		String getCadastrado = "Cadastrado!";
-		String getNome = "Jose Antonio";
-		String getSobrenome = "da Silva Gomes Lima";
-		String getSexo = "Masculino";
-		String getComida = "Frango Pizza";
-		String getEscolaridade = "mestrado";
-		String getEsportes = "Natacao Corrida";
 
 		Assert.assertTrue(page.obterResultadoCadastro().startsWith(getCadastrado));
 		Assert.assertEquals(getNome, page.obterNomeCadastro());
