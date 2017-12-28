@@ -1,6 +1,9 @@
 package br.pb.core;
 import static br.pb.core.DriverFactory.getDriver;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -68,5 +71,17 @@ public class DSL {
 		WebElement element = getDriver().findElement(By.id(id));
 		Select combo = new Select(element);
 		return combo.getFirstSelectedOption().getText();
+	}
+	
+	/********* Obter Erros (Exclusivo para o site Automation Practicle) ************/
+	public List<String> obterErros() {
+		List<WebElement> erros = DriverFactory.getDriver()
+				.findElements(By.xpath(".//*[@id='create_account_error']//ol//li"));
+		
+		List<String> retorno = new ArrayList<String>();
+		for (WebElement erro : erros) {
+			retorno.add(erro.getText());
+		}
+		return retorno;
 	}
 }
