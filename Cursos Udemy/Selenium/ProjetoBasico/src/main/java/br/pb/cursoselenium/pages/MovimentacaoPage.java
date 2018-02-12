@@ -12,11 +12,11 @@ import br.pb.cursoselenium.core.DriverFactory;
 public class MovimentacaoPage extends BasePage {
 
 	public void setDataMovimentacao(String data) {
-		escrever("data_transacao", "28/12/2017");
+		escrever("data_transacao", data);
 	}
 
 	public void setDataPagamento(String data) {
-		escrever("data_pagamento", "28/01/2018");
+		escrever("data_pagamento", data);
 	}
 
 	public void setDescricao(String descricao) {

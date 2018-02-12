@@ -18,10 +18,10 @@ import br.pb.cursoselenium.pages.LoginPage;
 
 public class BaseTest {
 	
-	private LoginPage page = new LoginPage();
-
 	@Rule
 	public TestName testName = new TestName();
+	
+	private LoginPage page = new LoginPage();
 	
 	@Before
 	public void inicializa() {
@@ -31,7 +31,7 @@ public class BaseTest {
 		page.setSenha("abcd_123");
 		page.entrar();
 	}
-
+	
 	@After
 	public void finaliza() throws IOException {
 

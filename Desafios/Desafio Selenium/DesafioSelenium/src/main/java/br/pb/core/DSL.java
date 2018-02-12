@@ -76,7 +76,7 @@ public class DSL {
 	/********* Obter Erros (Exclusivo para o site Automation Practicle) ************/
 	public List<String> obterErros() {
 		List<WebElement> erros = DriverFactory.getDriver()
-				.findElements(By.xpath(".//*[@id='create_account_error']//ol//li"));
+				.findElements(By.xpath("//div[@class='alert alert-danger']//ol//li"));
 		
 		List<String> retorno = new ArrayList<String>();
 		for (WebElement erro : erros) {
