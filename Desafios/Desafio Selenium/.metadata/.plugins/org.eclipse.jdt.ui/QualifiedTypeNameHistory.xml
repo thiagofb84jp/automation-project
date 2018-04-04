@@ -18,8 +18,12 @@
 <fullyQualifiedTypeName name="org.openqa.selenium.support.ui.WebDriverWait"/>
 <fullyQualifiedTypeName name="org.openqa.selenium.WebDriver"/>
 <fullyQualifiedTypeName name="org.openqa.selenium.By"/>
-<fullyQualifiedTypeName name="br.pb.core.DriverFactory"/>
 <fullyQualifiedTypeName name="java.util.concurrent.TimeUnit"/>
 <fullyQualifiedTypeName name="org.openqa.selenium.WebElement"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="br.pb.core.DriverFactory"/>
+<fullyQualifiedTypeName name="br.pb.core.DSL"/>
+<fullyQualifiedTypeName name="br.pb.devin.CalculadoraSimplesPage"/>
+<fullyQualifiedTypeName name="br.pb.devin.CalculadoraComplexaPage"/>
+<fullyQualifiedTypeName name="br.pb.core.BasePage"/>
 </qualifiedTypeNameHistroy>

@@ -1,4 +1,4 @@
-package br.pb.demoqa;
+package br.pb.demoqa.tests;
 
 import static br.pb.core.DriverFactory.getDriver;
 

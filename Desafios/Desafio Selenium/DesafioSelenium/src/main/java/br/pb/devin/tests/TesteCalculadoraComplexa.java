@@ -1,4 +1,4 @@
-package br.pb.devin;
+package br.pb.devin.tests;
 
 import static br.pb.core.DriverFactory.getDriver;
 import static br.pb.core.DriverFactory.killDriver;
@@ -7,17 +7,16 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 
-import br.pb.core.DSL;
+import br.pb.devin.pages.CalculadoraComplexaPage;
 
 public class TesteCalculadoraComplexa {
-	private DSL dsl;
+	private CalculadoraComplexaPage page;
 
 	@Before
 	public void inicializa() {
-		dsl = new DSL();
 		getDriver().get("http://www.devin.com.br/arquivos/calculadora-complexa.html");
+		page = new CalculadoraComplexaPage();
 	}
 
 	@After
@@ -27,53 +26,53 @@ public class TesteCalculadoraComplexa {
 
 	@Test
 	public void testSomar() {
-		dsl.clicarBotao(By.xpath("//input[@value='2']"));
-		dsl.clicarBotao(By.xpath("//input[@value='+']"));
-		dsl.clicarBotao(By.xpath("//input[@value='5']"));
-		dsl.clicarBotao(By.xpath("//input[@value='=']"));
+		page.setValor("2");
+		page.setOperacao("+");
+		page.setValor("5");
+		page.setCalcular();
 
-		Assert.assertEquals("7", dsl.obterValorCampo("visor"));
+		Assert.assertEquals("7", page.obterResultado());
 	}
 
 	@Test
 	public void testSubtrair() {
-		dsl.clicarBotao(By.xpath("//input[@value='9']"));
-		dsl.clicarBotao(By.xpath("//input[@value='-']"));
-		dsl.clicarBotao(By.xpath("//input[@value='2']"));
-		dsl.clicarBotao(By.xpath("//input[@value='=']"));
+		page.setValor("9");
+		page.setOperacao("-");
+		page.setValor("2");
+		page.setCalcular();
 
-		Assert.assertEquals("7", dsl.obterValorCampo("visor"));
+		Assert.assertEquals("7", page.obterResultado());
 	}
 
 	@Test
 	public void testMultiplicar() {
-		dsl.clicarBotao(By.xpath("//input[@value='8']"));
-		dsl.clicarBotao(By.xpath("//input[@value='*']"));
-		dsl.clicarBotao(By.xpath("//input[@value='5']"));
-		dsl.clicarBotao(By.xpath("//input[@value='=']"));
+		page.setValor("8");
+		page.setOperacao("*");
+		page.setValor("5");
+		page.setCalcular();
 
-		Assert.assertEquals("40", dsl.obterValorCampo("visor"));
+		Assert.assertEquals("40", page.obterResultado());
 	}
 
 	@Test
 	public void testDividir() {
-		dsl.clicarBotao(By.xpath("//input[@value='1']"));
-		dsl.clicarBotao(By.xpath("//input[@value='0']"));
-		dsl.clicarBotao(By.xpath("//input[@value='/']"));
-		dsl.clicarBotao(By.xpath("//input[@value='5']"));
-		dsl.clicarBotao(By.xpath("//input[@value='=']"));
+		page.setValor("1");
+		page.setValor("0");
+		page.setOperacao("/");
+		page.setValor("5");
+		page.setCalcular();
 
-		Assert.assertEquals("2", dsl.obterValorCampo("visor"));
+		Assert.assertEquals("2", page.obterResultado());
 	}
 
 	@Test
 	public void testDivisaoPorZero() {
-		dsl.clicarBotao(By.xpath("//input[@value='5']"));
-		dsl.clicarBotao(By.xpath("//input[@value='0']"));
-		dsl.clicarBotao(By.xpath("//input[@value='/']"));
-		dsl.clicarBotao(By.xpath("//input[@value='0']"));
-		dsl.clicarBotao(By.xpath("//input[@value='=']"));
+		page.setValor("5");
+		page.setValor("0");
+		page.setOperacao("/");
+		page.setValor("0");
+		page.setCalcular();
 
-		Assert.assertEquals("Infinity", dsl.obterValorCampo("visor"));
+		Assert.assertEquals("Infinity", page.obterResultado());
 	}
 }
