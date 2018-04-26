@@ -10,7 +10,6 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 import br.pb.cursoselenium.core.BaseTest;
-import br.pb.cursoselenium.core.Propriedades;
 import br.pb.cursoselenium.pages.MenuPage;
 import br.pb.cursoselenium.pages.MovimentacaoPage;
 import br.pb.cursoselenium.utils.DataUtils;
@@ -27,10 +26,11 @@ public class MovimentacaoTest extends BaseTest {
 
 		movPage.setDataMovimentacao(DataUtils.obterDataFormatada(new Date()));
 		movPage.setDataPagamento(DataUtils.obterDataFormatada(new Date()));
-		movPage.setDescricao("Movimentação 002");
+		movPage.setDescricao("Movimentação do Teste");
 		movPage.setInteressado("Jośe da Silva Santos Lima");
 		movPage.setValor("500");
-		movPage.setConta(Propriedades.NOME_CONTA_ALTERADA);
+		movPage.setConta("Conta para movimentacoes");
+//		movPage.setConta(Propriedades.NOME_CONTA_ALTERADA);
 		movPage.setStatusPago();
 		movPage.salvar();
 
@@ -68,7 +68,8 @@ public class MovimentacaoTest extends BaseTest {
 		movPage.setDescricao("Movimentação 002");
 		movPage.setInteressado("Jośe da Silva Santos Lima");
 		movPage.setValor("700");
-		movPage.setConta(Propriedades.NOME_CONTA_ALTERADA);
+		movPage.setConta("Conta para movimentacoes");		
+//		movPage.setConta(Propriedades.NOME_CONTA_ALTERADA);
 		movPage.setStatusPago();
 		movPage.salvar();
 		

@@ -7,8 +7,8 @@ Quando(/^cadastrar um novo usuário$/) do
 end
 
 Quando(/^informar todos os campos obrigatórios e confirmar os dados$/) do
-  fill_in 'nome', :with => 'João Lima'
-  fill_in 'email', :with => 'joao_lima@gmail.com'
+  fill_in 'nome', :with => 'Joana Andrade Silva'
+  fill_in 'email', :with => 'joana_silva@gmail.com'
   fill_in 'senha', :with => 'abcd_123'
   click_on 'Cadastrar'
 end
@@ -29,13 +29,13 @@ Então(/^vejo uma mensagem destacando todos os campos obrigatórios para preench
 end
 
 Quando(/^informar um usuário e senha válidos$/) do
-  fill_in 'email', :with => 'joao_lima@gmail.com'
+  fill_in 'email', :with => 'joana_silva@gmail.com'
   fill_in 'senha', :with => 'abcd_123'
   click_on 'Entrar'
 end
 
 Então(/^o sistema deve permitir a autenticação do usuário$/) do
-  expect(page).to have_content 'Bem vindo, João Lima!'
+  expect(page).to have_content 'Bem vindo, Joana Andrade Silva!'
 end
 
 Quando(/^informar um usuário e senha inválidos$/) do

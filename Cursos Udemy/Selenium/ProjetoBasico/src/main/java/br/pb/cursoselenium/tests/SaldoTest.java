@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import br.pb.cursoselenium.core.BaseTest;
-import br.pb.cursoselenium.core.Propriedades;
 import br.pb.cursoselenium.pages.HomePage;
 import br.pb.cursoselenium.pages.MenuPage;
 
@@ -16,7 +15,8 @@ public class SaldoTest extends BaseTest {
 	@Test
 	public void testSaldoConta() {
 		menu.acessarTelaPrincipal();
-		Assert.assertEquals("500.00", page.obterSaldoConta(Propriedades.NOME_CONTA_ALTERADA));
+//		Assert.assertEquals("500.00", page.obterSaldoConta(Propriedades.NOME_CONTA_ALTERADA));
+		Assert.assertEquals("534.00", page.obterSaldoConta("Conta para saldo"));
 	}
 
 }

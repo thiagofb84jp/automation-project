@@ -6,7 +6,6 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 import br.pb.cursoselenium.core.BaseTest;
-import br.pb.cursoselenium.core.Propriedades;
 import br.pb.cursoselenium.pages.ContasPage;
 import br.pb.cursoselenium.pages.MenuPage;
 
@@ -20,7 +19,8 @@ public class ContaTest extends BaseTest {
 	public void test1_InserirConta() {
 		menuPage.acessarTelaInserirConta();
 
-		contasPage.setNome(Propriedades.NOME_NOVA_CONTA);
+//		contasPage.setNome(Propriedades.NOME_NOVA_CONTA);
+		contasPage.setNome("Conta do Teste");
 		contasPage.salvar();
 
 		Assert.assertEquals("Conta adicionada com sucesso!", contasPage.obterMensagemSucesso());
@@ -30,9 +30,9 @@ public class ContaTest extends BaseTest {
 	public void test2_AlterarConta() {
 		menuPage.acessarTelaListarConta();
 		
-		contasPage.clicarAlterarConta(Propriedades.NOME_NOVA_CONTA);
-		
-		contasPage.setNome(Propriedades.NOME_CONTA_ALTERADA);
+		contasPage.clicarAlterarConta("Conta para alterar");
+		contasPage.setNome("Conta alterada");
+//		contasPage.setNome(Propriedades.NOME_CONTA_ALTERADA);
 		contasPage.salvar();
 		
 		Assert.assertEquals("Conta alterada com sucesso!", contasPage.obterMensagemSucesso());
@@ -42,7 +42,8 @@ public class ContaTest extends BaseTest {
 	public void test3_InserirContaMesmoNome() {
 		menuPage.acessarTelaInserirConta();
 		
-		contasPage.setNome(Propriedades.NOME_CONTA_ALTERADA);
+		contasPage.setNome("Conta mesmo nome");
+//		contasPage.setNome(Propriedades.NOME_CONTA_ALTERADA);
 		contasPage.salvar();
 		
 		Assert.assertEquals("Já existe uma conta com esse nome!", contasPage.obterMensagemErro());
