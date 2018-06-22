@@ -21,8 +21,8 @@ public class MenuPage extends BasePage {
 	public void acessarTelaResumo() {
 		clicarLink("Resumo Mensal");
 	}
-	
-	public void acessarTelaPrincipal() {
+
+	ublic void acessarTelaPrincipal() {
 		clicarLink("Home");
 	}
 

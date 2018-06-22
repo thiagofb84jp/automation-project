@@ -17,22 +17,29 @@ import org.openqa.selenium.TakesScreenshot;
 import br.pb.cursoselenium.pages.LoginPage;
 
 public class BaseTest {
-	
-	@Rule
+
+	Rule
 	public TestName testName = new TestName();
-	
-	private LoginPage page = new LoginPage();
-	
-	@Before
+
+
+	ivate LoginPage page = new LoginPage();
+
+
+
+	fore
 	public void inicializa() {
 		page.acessarTelaInicial();
-		
-		page.setEmail("thiagofb84jp@gmail.com");
+
+	
+
+		setEmail("thiagofb84jp@gmail.com");
 		page.setSenha("abcd_123");
 		page.entrar();
 	}
+
+	@A
+
 	
-	@After
 	public void finaliza() throws IOException {
 
 		TakesScreenshot ss = (TakesScreenshot) getDriver();

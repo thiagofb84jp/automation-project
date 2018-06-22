@@ -2,14 +2,13 @@ package br.pb.cursoselenium.pages;
 
 import static br.pb.cursoselenium.core.DriverFactory.getDriver;
 
-import org.openqa.selenium.By;
-
 import br.pb.cursoselenium.core.BasePage;
 
 public class LoginPage extends BasePage {
 
 	public void acessarTelaInicial() {
-		getDriver().get("https://srbarriga.herokuapp.com/");
+		getDriver().get("http://seubarriga.wcaquino.me/");
+				  getDriver().get("https://srbarriga.herokuapp.com/");
 	}
 
 	public void setEmail(String email) {
@@ -21,8 +20,9 @@ public class LoginPage extends BasePage {
 	}
 
 	public void entrar() {
-		clicarBotaoPorTexto("Entrar");
-//		clicarBotao(By.xpath("//button[.='Entrar']"));
+		clicarBotaoPorTexto("Entrar")
+		
+	 / clicarBotao(By.xpath("//button[.='Entrar']"));
 	}
 
 	// Esta é uma forma de simplificar mais o acesso ao sistema
@@ -30,6 +30,10 @@ public class LoginPage extends BasePage {
 		setEmail(email);
 		setSenha(senha);
 		entrar();
+
+
+		public void resetar() {
+		clicarLink("reset");
 	}
 
 }

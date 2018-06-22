@@ -30,49 +30,60 @@ public class MovimentacaoTest extends BaseTest {
 		movPage.setInteressado("Jośe da Silva Santos Lima");
 		movPage.setValor("500");
 		movPage.setConta("Conta para movimentacoes");
-//		movPage.setConta(Propriedades.NOME_CONTA_ALTERADA);
+				  movPage.setConta(Propriedades.NOME_CONTA_ALTERADA);
 		movPage.setStatusPago();
 		movPage.salvar();
 
 		Assert.assertEquals("Movimentação adicionada com sucesso!", movPage.obterMensagemSucesso());
-	}
 	
+
 	@Test
 	public void test2_CamposObrigatorios() {
 		menuPage.acessarTelaInserirMovimentacao();
+
+		vPage.salvar();
+
+
+
+		<String> erros = movPage.obterErros();
+		/
+		 A ert.assertEquals("Data da Movimentação é obrigatório", erros.get(0)); //
 		
-		movPage.salvar();
-		
-		List<String> erros = movPage.obterErros();
-//		Assert.assertEquals("Data da Movimentação é obrigatório", erros.get(0)); // Uma das formas de obter os erros
-//		Assert.assertTrue(erros.contains("Data da Movimentação é obrigatório")); // Outra forma de obter os erros
-		Assert.assertTrue(erros.containsAll(Arrays.asList(
-				"Data da Movimentação é obrigatório",
-				"Data do pagamento é obrigatório",
-				"Descrição é obrigatório",
-				"Interessado é obrigatório",
-				"Valor é obrigatório",
-				"Valor deve ser um número"
-		))); // Monta uma coleção de textos e verifica todos os erros de uma única vez
-		Assert.assertEquals(6, erros.size()); // Verifica se os '6' erros estão presentes 
+		// / Uma das formas de obter os err
+		s
+ // Assert.assertTrue(erros.contains("Data da Movimentação é obrigatório"));
+		// //
+		// Outra forma de obter os erros
+		Assert.assertTrue(erros.containsAll(Arraysst("Data da Movimentação é obrigatório",
+				"Data do pagamento é obrigatóri Descrição é obrigatório",  ressado é obrigatório",
+				"Valor é obrigatório", "Val ve ser um número"))); // Ma uma coleção de textos e verifica todos os
+											
+																		// 						// erros de uma única vez
+		Assert.assertEquals(6, erros.size()); // Verifica se os '6' erros estão res
+
+	s
 	}
-	
+
 	@Test
 	public void test3_InserirMovimentacaoFutura() {
-		menuPage.acessarTelaInserirMovimentacao();
-		
-		Date dataFutura = DataUtils.obterDataComDiferencaDias(5);
+		menuPage.acessarTelaInserirMoviment
+
+		;
+
+		Date dataFutura = DataUtils.obterDataComDiferencaDia
+
 		
 		movPage.setDataMovimentacao(DataUtils.obterDataFormatada(dataFutura));
 		movPage.setDataPagamento(DataUtils.obterDataFormatada(dataFutura));
 		movPage.setDescricao("Movimentação 002");
 		movPage.setInteressado("Jośe da Silva Santos Lima");
 		movPage.setValor("700");
-		movPage.setConta("Conta para movimentacoes");		
-//		movPage.setConta(Propriedades.NOME_CONTA_ALTERADA);
-		movPage.setStatusPago();
-		movPage.salvar();
+		movPage.setConta("Conta para movimentacoes
 		
+	 / movPage.setConta(Propriedades.NOME_CONTA_ALTERADA);
+		movPage.setStatusPago();
+		movPage.salvar(
+
 		List<String> erros = movPage.obterErros();
 		Assert.assertTrue(erros.contains("Data da Movimentação deve ser menor ou igual à data atual"));
 		Assert.assertEquals(1, erros.size());

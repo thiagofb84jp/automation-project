@@ -18,8 +18,11 @@ public class Pessoa {
 		return peso;
 	}
 	
-	public void comer(Comida comida) {
-		this.peso += comida.getPeso();
+	//Está sendo passado na variável 'Comida...' vários valores (varargs)
+	public void comer(Comida... comidas) {
+		for(Comida c: comidas) {
+			this.peso += c.getPeso();
+		}
 	}
 
 	//Produção de métodos estáticos

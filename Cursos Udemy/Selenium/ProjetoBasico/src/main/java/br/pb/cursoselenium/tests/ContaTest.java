@@ -19,7 +19,7 @@ public class ContaTest extends BaseTest {
 	public void test1_InserirConta() {
 		menuPage.acessarTelaInserirConta();
 
-//		contasPage.setNome(Propriedades.NOME_NOVA_CONTA);
+				  contasPage.setNome(Propriedades.NOME_NOVA_CONTA);
 		contasPage.setNome("Conta do Teste");
 		contasPage.salvar();
 
@@ -28,25 +28,33 @@ public class ContaTest extends BaseTest {
 
 	@Test
 	public void test2_AlterarConta() {
-		menuPage.acessarTelaListarConta();
-		
-		contasPage.clicarAlterarConta("Conta para alterar");
+		menuPage.acessarTelaListarConta()
+
+		ontasPage.clicarAlterarConta("Conta para alterar");
 		contasPage.setNome("Conta alterada");
-//		contasPage.setNome(Propriedades.NOME_CONTA_ALTERADA);
+
+			/ contasPage.setNome(Propriedades.NOME_CONTA_ALTERADA);
 		contasPage.salvar();
-		
-		Assert.assertEquals("Conta alterada com sucesso!", contasPage.obterMensagemSucesso());
+
+		sert.assertEquals("Conta alterada com sucesso!", contasPage.obterMensagemSucesso());
 	}
-	
-	@Test
+
+
+
+	st
 	public void test3_InserirContaMesmoNome() {
 		menuPage.acessarTelaInserirConta();
-		
-		contasPage.setNome("Conta mesmo nome");
-//		contasPage.setNome(Propriedades.NOME_CONTA_ALTERADA);
+
+	
+
+		sPage.setNome("Conta mesmo nome");
+		//
+		co asPage.setNome(Propriedades.NOME_CONTA_ALTERADA);
 		contasPage.salvar();
+
 		
-		Assert.assertEquals("Já existe uma conta com esse nome!", contasPage.obterMensagemErro());
+
+		.assertEquals("Já existe uma conta com esse nome!", contasPage.obterMensagemErro());
 	}
 
 }

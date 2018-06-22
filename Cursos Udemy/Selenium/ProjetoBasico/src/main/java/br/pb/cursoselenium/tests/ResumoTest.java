@@ -29,27 +29,30 @@ public class ResumoTest extends BaseTest {
 		Assert.assertEquals("Movimentação removida com sucesso!", resumoPage.obterMensagemSucesso());
 	}
 
-	// @Test(expected=NoSuchElementException.class) - Uma das formas de se gerar uma exceção para os testes
+	// @Test(expected=NoSuchElementException.class) - Uma das formas de se gerar uma
+	// 	// exceção para os testes
 	@Test
 	public void test2_ResumoMensal() {
 		menuPage.acessarTelaResumo();
 
-		Assert.assertEquals("Seu Barriga - Extrato", DriverFactory.getDriver().getTitle());
-		
-		resumoPage.selecionarAno("2016");
-		resumoPage.buscar();
-		
-		List<WebElement> elementosEncontrados = 
-				DriverFactory.getDriver().findElements(By.xpath("//*[@id='tabelaExtrato']/tbody/tr"));
+		Assert.assertEquals("Seu Barriga - Extrato", DriverFactory.getDriver().getTitle
+
+				resumoPage.selecionarAno("2016");
+		resumoPage.buscar(
+
+		List<WebElement> elementosEncontrados = rFactory.getDriver()
+				
+				.findElements(By.xpath("//*[@id='tabelaExtrato']/tbody/tr"));
 		Assert.assertEquals(0, elementosEncontrados.size());
+
 		
-		/*
-		try {
-			DriverFactory.getDriver().findElement(By.xpath("//*[@id='tabelaExtrato']/tbody/tr"));
-			Assert.fail();
-		}catch (Exception e) {
-			// Caso caia nesta linha, não faça nada!
-		}
-		*/
+	
+		 *  try  iverFactory.getDriver().findElement(By.xpath(
+	
+		 * 	 * "//*[@id='tabelaExtrato']/tbody/tr  Assert.fail() catch (Exception e) {
+
+		 *  // Caso caia nesta linha, não faça nada 
+
+		 */
 	}
 }
