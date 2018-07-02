@@ -7,9 +7,9 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/resources/features/alugar_filme.feature", //Localiza as features
+		features = "src/test/resources/features/inserir_conta.feature", //Localiza as features
 		glue = "br.pb.cursoselenium.steps", //Localiza os arquivos de steps
-		tags = {},
+		tags = {"~@ignore"},
 		plugin = {"pretty", "html:target/report.html", "json:target/report.json"},
 		monochrome = false,
 		snippets = SnippetType.CAMELCASE,
