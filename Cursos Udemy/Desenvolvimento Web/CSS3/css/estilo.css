@@ -76,5 +76,7 @@
 }
 
 #box-transicao:hover{
-	background: red;	
+	/*width: 400px;*/
+	background: black;
+	transition: background 3s, width 8s;
 }
