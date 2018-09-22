@@ -26,6 +26,7 @@ public class CalculadoraComplexaPage extends PageObject{
 	//Resolver o problema relacionado ao obterValorResultado
 	//Teste de visualização do GIT. Caso este arquivo seja versionado
 	//Isso quer dizer que deu certo. :)
+	//Branch do mês de setembro
 	
 //	public String obterValorCampo(String id) {
 //		return driver.findElement(By.id(id)).getAttribute("value");
