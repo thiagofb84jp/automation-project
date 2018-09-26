@@ -1,5 +1,6 @@
 package br.pb.devin.calculadoracomplexa;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -12,29 +13,19 @@ public class CalculadoraComplexaPage extends PageObject{
 	}
 	
 	public void obterValor(String valorCalc) {
-		driver.findElement(By.xpath("//input[@value='"+ valorCalc +"']"));
+		driver.findElement(By.xpath("//input[@value='" + valorCalc + "']")).click();
 	}
 	
 	public void operador(String operador) {
-		driver.findElement(By.xpath("//input[@value='"+ operador +"']"));
+		driver.findElement(By.xpath("//input[@value='"+ operador +"']")).click();
 	}
 	
 	public void obterResultado() {
-		driver.findElement(By.xpath("//input[@value='=']"));
+		driver.findElement(By.xpath("//input[@value='=']")).click();;
 	}
 	
-	//Resolver o problema relacionado ao obterValorResultado
-	//Teste de visualização do GIT. Caso este arquivo seja versionado
-	//Isso quer dizer que deu certo. :)
-	//Branch do mês de setembro
-	//Outra branch
-	
-//	public String obterValorCampo(String id) {
-//		return driver.findElement(By.id(id)).getAttribute("value");
-//	}	
-	
-//	public void validarResultado(String resultado) {
-//		String obterResultado = driver.findElement(By.id("visor")).getAttribute("value");
-//		Assert.assertEquals(resultado, obterResultado);
-//	}	
+	public void validarResultado(String valorResultado) {
+		String getResultado = driver.findElement(By.id("visor")).getAttribute("value");
+		Assert.assertEquals(valorResultado, getResultado);
+	}
 }
