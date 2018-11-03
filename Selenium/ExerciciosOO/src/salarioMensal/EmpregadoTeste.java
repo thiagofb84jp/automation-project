@@ -1,4 +1,4 @@
-package exerciciosOO.salarioMensal;
+package salarioMensal;
 
 public class EmpregadoTeste {
 

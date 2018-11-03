@@ -1,4 +1,4 @@
-package exerciciosOO.supermercado;
+package supermercado;
 
 public class Produto {
 

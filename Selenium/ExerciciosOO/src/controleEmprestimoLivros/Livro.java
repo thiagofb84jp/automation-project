@@ -1,4 +1,4 @@
-package exerciciosOO.controleEmprestimoLivros;
+package controleEmprestimoLivros;
 
 public class Livro {
 

@@ -1,4 +1,4 @@
-package br.pb.demoCSCart;
+package br.pb.demoCSCart.procurarProdutos;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -43,7 +43,8 @@ public class ProcurarProdutosPage extends PageObject{
 		driver.findElement(By.xpath("//div[@class='ty-logo-container']/a/img")).click();
 	}
 	
-	public void clicarCarrinhoCompras() {
+	public void clicarCarrinhoCompras() throws InterruptedException {
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//div[@id='sw_dropdown_8']/a/i")).click();
 	}
 	
@@ -52,7 +53,7 @@ public class ProcurarProdutosPage extends PageObject{
 	}
 	
 	public void validarResultado(String valorResultado) {
-		String getResultado = driver.findElement(By.xpath("//tbody/tr/td[2]/a[@class='ty-cart-content__product-title']")).getAttribute("value");
+		String getResultado = driver.findElement(By.xpath("//tbody/tr/td//a[contains(text(),'" + valorResultado + "')]")).getText();
 		Assert.assertEquals(valorResultado, getResultado);
 	}
 }
