@@ -1,0 +1,37 @@
+Link: https://www.vsoft.com.br/blog/oportunidade-para-engenheiro-de-testes-pleno
+Segue os frameworks: Junit, restassured e Spring Boot
+
+Links:
+
+1. Rest Assured
+a) O que é?
+http://rest-assured.io/
+https://github.com/rest-assured/rest-assured/wiki/GettingStarted
+http://learn-automation.com/configure-rest-assured-with-eclipse/
+http://restservicestesting.blogspot.com/2016/10/setup-rest-assured-with-eclipse.html
+http://restservicestesting.blogspot.com/2016/10/extracting-json-response-with-rest.html
+
+b) Links complementares:
+http://www.appsdeveloperblog.com/rest-assured-tutorial/
+https://www.guru99.com/comparison-between-web-services.html
+
+http://toolsqa.com/rest-assured/rest-api-test-using-rest-assured/
+http://toolsqa.com/rest-assured/read-json-response-body-using-rest-assured/ (Study tomorrow)
+http://toolsqa.com/rest-assured/post-request-using-rest-assured/
+
+2. Spring Boot
+a) O que é?
+http://spring.io/projects/spring-boot
+https://dzone.com/articles/7-things-to-know-getting-started-with-spring-boot?fromrel=true
+https://dzone.com/articles/creating-a-spring-boot-project-with-eclipse-and-ma
+http://www.adeveloperdiary.com/java/spring-boot/create-spring-boot-application-step-step/
+
+b) Links complementares:
+https://blog.jayway.com/2014/07/04/integration-testing-a-spring-boot-application/
+https://octoperf.com/blog/2018/02/22/spring-boot-rest-tutorial/
+
+3. Spring Data
+
+4. Webservice RestFul
+O que é?
+https://www.guru99.com/restful-web-services.html
