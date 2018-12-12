@@ -1,0 +1,14 @@
+1. O QUE É O SELENIUM?
+
+- Selenium is a free and open source library for automated testing web applications;
+- Selenium supports all major browsers (Firefox, Chrome, IE);
+- tests can be written in many programming languages (Java, C#, Ruby, Python) and run on Windows, Linux and Macintosh platforms;
+
+2. 
+
+
+3. QUAIS SÃO OS PRINCIPAIS COMPONENTES WEB RECONHECIDOS PELO SELENIUM?
+
+- ID, Name, Link Text, Partial Link Text, XPath, Tag Name, Class Name e CSS
+
+4. 
