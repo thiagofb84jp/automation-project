@@ -5,6 +5,12 @@ public class FirstJavaProgram {
 	static int varSec = 98765;
 	static String name = "John";
 	
+	boolean isTrue = true;
+	boolean isFalse = false;
+	
+	long phoneNumber = 9876543215L;
+	double decimalValues = 234.43D;
+	
 	//Static class
 	public static void firstMethod() {
 		int number = 12345;
