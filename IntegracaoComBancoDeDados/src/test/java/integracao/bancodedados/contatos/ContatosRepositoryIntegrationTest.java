@@ -87,5 +87,4 @@ public class ContatosRepositoryIntegrationTest {
 		List<Contato> resultado = contatoRepository.findAll();
 		Assert.assertEquals(0, resultado.size());
 	}
-
 }
