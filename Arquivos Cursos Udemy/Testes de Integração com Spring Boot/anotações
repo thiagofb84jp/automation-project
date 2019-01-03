@@ -1,0 +1,17 @@
+Pontos Importantes da Aula (Anotações Spring Boot):
+
+1. @RunWith => Esta anotação vai dizer para o JUnit usar a classe passada como parâmetro para executar os testes;
+2. A classe SpringRunner.class vai iniciar o contexto de testes do Spring e executar os testes;
+3. @DataJpaTest => Contém configurações que permitem o uso do Spring Data JPA repositories sem precisar subir todo o contexto do Spring e ainda configura um banco embutido para ser usado em memória durante todo os testes;
+4. Expected Exception => A classe ExpectedException.class é um componente do JUnit que permite que façamos validações em cima de uma exception;
+5. @AutoConfigureTestDataBase => Pode-se usar o H2, Derby ou o HSQL para ser utilizado como banco de dados durante os testes, utilizando-se da propriedade 'connection';
+6. EmbeddedDatabaseConnection => A propriedade replace define os tipos de datasources que serão substituídos, ela recebe um enum 'Replace' com as seguintes opções:
+   -> Any - Substitui qualquer datasource;
+   -> AUTO_CONFIGURED - Substitui apenas datasources configurados automaticamente;
+   -> NONE - Não substitui o datasource da aplicação.
+7. @SpringBootTest => A anotação 'Spring Boot Test' deve ser utilizada quando precisamos usar funcionalidades do Spring Boot, ela vai procurar pela classe de configuração da aplicação e usá-la para subir o contexto da aplicação;
+8. @MockBean => A anotação 'Mock Bean' vai adicionar os objetos falsos ao contexto do Spring, esses objetos vão substituir qualquer objeto do mesmo tipo no contexto da aplicação e caso seja um atributo, ele será injetado automaticamente;
+9. Mockito => Trata-se de um framework de mocking no qual facilita e simplifica a criação de objetos falsos para serem utilizados nos testes de software;
+10. @Controller => Associada com classes que possuem métodos que processam requests numa aplicação web;
+11. @Service => Associada com classes que representam a ideia do Service do Domain Driven Design. Para ficar menos teórico pense em classes que representam algum fluxo de negócio da sua aplicação. Por exemplo, um fluxo de finalização de compra envolve atualizar manipular o carrinho, enviar email, processar pagamento etc. Este é o típico código que temos dificuldade de saber onde vamos colocar, em geral ele pode ficar num Service.
+12. Anotação que serve para definir uma classe como pertencente à camada de persistência.
