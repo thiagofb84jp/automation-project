@@ -4,7 +4,8 @@ public class StringMethodPartI {
 	
 	public static void main(String[] args) {
 		
-		String text = "Learning is the key";
+		//String text = "Learning is the key";
+		String text = "Hi we are learning from easybix.com";
 		/*
 		 * Learning about the method "String chartAt()"
 		char ch = text.charAt(12);
@@ -21,6 +22,11 @@ public class StringMethodPartI {
 		System.out.println(text2);
 		*/
 		
+		/*
+		 * Learning about the method "String contains()"
+		System.out.println(text.contains("key"));
+		*/
 		
+		System.out.println("Message ending with .com (result will equals = " + text.endsWith("m") + ")");		
 	}
 }
