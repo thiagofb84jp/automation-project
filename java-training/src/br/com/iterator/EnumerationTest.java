@@ -1,4 +1,4 @@
-package iterator;
+package br.com.iterator;
 
 import java.util.Enumeration;
 import java.util.Vector;

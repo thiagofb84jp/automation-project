@@ -1,4 +1,4 @@
-package exceptionHandling;
+package br.com.exceptionHandling;
 
 public class SampleException {
 

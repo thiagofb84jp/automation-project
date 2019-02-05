@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -19,7 +19,7 @@ import integracao.rest.contatos.ContatoRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-public class AgendaControllerIntegrationTest_testRestTemplate {
+public class AgendaControllerIntegrationTest {
 
 	@Autowired
 	private TestRestTemplate testRestTemplate;
@@ -47,8 +47,36 @@ public class AgendaControllerIntegrationTest_testRestTemplate {
 	}
 
 	@Test
-	public void deveMostrarTodosContatos() {
-		ResponseEntity<String> resposta = testRestTemplate.exchange("/agenda/",HttpMethod.GET,null, String.class);
+	public void deveMostrarUmContatoComGetForEntity() {
+		ResponseEntity<Contato> resposta = 
+				testRestTemplate.getForEntity("/agenda/contato/{id}", Contato.class,contato.getId());
+
 		Assert.assertEquals(HttpStatus.OK, resposta.getStatusCode());
+		Assert.assertTrue(resposta.getHeaders().getContentType().equals(
+				MediaType.parseMediaType("application/json;charset=UTF-8")));
+		Assert.assertEquals(contato, resposta.getBody());
 	}
+
+	@Test
+	public void deveMostrarUmContatoComGetForObject() {
+		Contato resposta = 
+				testRestTemplate.getForObject("/agenda/contato/{id}", Contato.class,contato.getId());
+		Assert.assertEquals(contato, resposta);
+	}
+
+	@Test
+	public void buscaUmContatoDeveRetornarNaoEncontradoComGetForEntity() {
+		ResponseEntity<Contato> resposta = 
+				testRestTemplate.getForEntity("/agenda/contato/{id}", Contato.class,100);
+
+		Assert.assertEquals(HttpStatus.NOT_FOUND, resposta.getStatusCode());
+		Assert.assertNull(resposta.getBody());
+	}
+
+	@Test
+	public void buscaUmContatoDeveRetornarNaoEncontradogetForObject() {
+		Contato resposta = testRestTemplate.getForObject("/agenda/contato/{id}", Contato.class,100);
+		Assert.assertNull(resposta);
+	}
+
 }
