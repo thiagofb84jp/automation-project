@@ -47,20 +47,16 @@ public class AprenderCucumber {
 
 	Date entrega = new Date();
 
-	@Dado("^que a entrega é dia (\\d+)/(\\d+)/(\\d+)$")
-	public void queAEntregaÉDia(int dia, int mes, int ano) throws Throwable {
-		Calendar cal = Calendar.getInstance();
-		cal.set(Calendar.DAY_OF_MONTH, dia);
-		cal.set(Calendar.MONTH, mes - 1);
-		cal.set(Calendar.YEAR, ano);
-		entrega = cal.getTime();
+	@Dado("^que a entrega é dia (.*)$")
+	public void queAEntregaÉDia(Date data) throws Throwable {
+		entrega = data;
 	}
 
 	@Quando("^a entrega atrasar em (\\d+) (dia|dias|mes|meses)$")
 	public void aEntregaAtrasarEmDias(int qtdDiasAtraso, String tempo) throws Throwable {
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(entrega);
-		
+
 		if (tempo.equals("dias")) {
 			cal.add(Calendar.DAY_OF_MONTH, qtdDiasAtraso);
 		}
@@ -76,4 +72,37 @@ public class AprenderCucumber {
 		String dataFormatada = format.format(entrega);
 		Assert.assertEquals(data, dataFormatada);
 	}
+
+	/*********************** Desafio REGEX ***********************************/
+	@Dado("^que o ticket( especial)? é (A.\\d{3})$")
+	public void que_o_ticket_é_AF(String tipo, String arg1) throws Throwable {
+
+	}
+
+	@Dado("^que o valor da passagem é R\\$ (\\d+),(\\d+)$")
+	public void que_o_valor_da_passagem_é_R$(int arg1, int arg2) throws Throwable {
+	
+	}
+
+	@Dado("^que o nome do passageiro é \"(.{5,20})\"$")
+	public void que_o_nome_do_passageiro_é(String arg1) throws Throwable {
+
+	}
+
+	@Dado("^que o telefone do passageiro é (9\\d{3}-\\d{4})$")
+	public void que_o_telefone_do_passageiro_é(String telefone) throws Throwable {
+
+	}
+
+	@Quando("^criar os steps$")
+	public void criar_os_steps() throws Throwable {
+	
+	}
+
+	@Então("^o teste vai funcionar$")
+	public void o_teste_vai_funcionar() throws Throwable {
+	
+	}
+	
+	/*************************************************************************/
 }
